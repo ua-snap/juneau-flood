@@ -1,5 +1,11 @@
 import React from "react";
-import { HashRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import "./styles/App2.css";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
@@ -12,8 +18,6 @@ import Footer from "./components/Footer";
 import ScrollToHashElement from "./components/ScrollToHashElement";
 import Feedback from "./pages/feedback";
 import SBmodel from "./pages/SBmodel2";
-
-
 
 // Wrap routes in a layout-aware container
 const Layout = ({ children }) => {
@@ -54,4 +58,3 @@ const App2 = () => {
 };
 
 export default App2;
-

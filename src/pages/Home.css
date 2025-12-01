@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -89,8 +89,6 @@ body {
   text-align: center;
 }
 
-
-
 .impact-slider {
   position: relative;
   max-width: 1200px;
@@ -109,9 +107,8 @@ body {
   width: 100%;
   height: auto;
   max-height: 400px;
-  object-fit: cover; 
+  object-fit: cover;
 }
-
 
 .slide-caption {
   position: absolute;
@@ -205,7 +202,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -222,7 +219,7 @@ body {
   margin: 0;
   transform: translateY(0);
   transition: transform 0.4s ease;
-  margin-bottom: 0.05rem; 
+  margin-bottom: 0.05rem;
 }
 .card-description {
   font-size: 1.2rem;
@@ -241,7 +238,6 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .faq-row {
   cursor: pointer;
@@ -348,7 +344,9 @@ body {
   text-align: center;
   cursor: pointer;
   width: 190px;
-  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  transition:
+    background-color 0.3s ease-in-out,
+    transform 0.2s;
   text-decoration: none;
   align-items: center;
   margin-top: -10px;
@@ -372,7 +370,9 @@ body {
   text-align: center;
   cursor: pointer;
   width: 190px;
-  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  transition:
+    background-color 0.3s ease-in-out,
+    transform 0.2s;
   text-decoration: none;
   align-items: center;
   margin-top: -20px;
@@ -414,10 +414,7 @@ body {
   .analytics-iframe-wrapper {
     padding-bottom: 45.25%; /* 16:9 aspect ratio for desktop */
   }
-
-
 }
-
 
 @media (max-width: 768px) {
   .home-container {
@@ -443,10 +440,10 @@ body {
   .home-about-card {
     padding: 12px 15px;
     font-size: 1rem;
-      width: 85%;
-  position: relative;
-   margin-left: auto;
-  margin-right: auto;
+    width: 85%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .home-about-card h3 {
@@ -476,57 +473,55 @@ body {
   }
 
   .home-flood-card {
-  max-width: 1156px;
-  padding: 12px 20px;
-  background: #f4f5f5;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  color: #000000;
-  margin-bottom: 20px !important;
-  margin-top: 30px;
-  height: 300px;
-  width: 85%;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
+    max-width: 1156px;
+    padding: 12px 20px;
+    background: #f4f5f5;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 20px !important;
+    margin-top: 30px;
+    height: 300px;
+    width: 85%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-}
+  .resources-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
 
-.resources-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 95%;
-  margin-top: -10px;
-  margin-bottom: -10px;
-}
+  .slide-caption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    color: #fff;
+    padding: 0.8rem;
+    text-align: left;
+  }
 
-.slide-caption {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  color: #fff;
-  padding: .8rem;
-  text-align: left;
-
-}
-
-.slide-caption h4 {
-  margin: 0;
-  font-size: .9rem;
-  font-weight: 600;
+  .slide-caption h4 {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
     margin-bottom: -7px;
-}
+  }
 
-.slide-caption p {
-  font-size: .8rem;
-  margin-top: 0.3rem;
-}
+  .slide-caption p {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+  }
 }
 
 @media (max-width: 480px) {

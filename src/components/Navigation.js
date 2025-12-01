@@ -15,7 +15,7 @@ const Navigation = () => {
         ☰
       </span>
       <ul className={isMenuOpen ? "open" : ""}>
-      <li>
+        <li>
           <NavLink
             to="/home"
             className={({ isActive }) => (isActive ? "active-link" : "")}
@@ -55,7 +55,7 @@ const Navigation = () => {
             Suicide Basin
           </NavLink>
         </li>
-          <li>
+        <li>
           <NavLink
             to="/feedback"
             className={({ isActive }) => (isActive ? "active-link" : "")}
@@ -63,13 +63,9 @@ const Navigation = () => {
             Feedback
           </NavLink>
         </li>
-
-        
-
       </ul>
     </nav>
   );
 };
 
 export default Navigation;
-

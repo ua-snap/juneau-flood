@@ -2,18 +2,25 @@ import React, { useState, useEffect } from "react";
 import Papa from "papaparse"; // CSV parser
 import "./FloodTable.css"; // Import styles
 
-const S3_CSV_URL = "https://juneauflood-basin-images.s3.us-west-2.amazonaws.com/FloodEvents.csv";
+const S3_CSV_URL =
+  "https://juneauflood-basin-images.s3.us-west-2.amazonaws.com/FloodEvents.csv";
 
 const COLUMN_NAME_MAPPING = {
-  "Release Stage D.S. Gage (ft)": "Pre Flood Water Level at Mendenhall Lake (ft)",
-  "D.S. Gage Release Flow (cfs)": "Pre-flood Streamflow in Mendenhall River (cfs)",
+  "Release Stage D.S. Gage (ft)":
+    "Pre Flood Water Level at Mendenhall Lake (ft)",
+  "D.S. Gage Release Flow (cfs)":
+    "Pre-flood Streamflow in Mendenhall River (cfs)",
   "Crest Date": "Peak Water Level Date",
   "Crest Stage D.S. Gage (ft)": "Peak Water Level at Mendenhall Lake (ft)",
   "D.S. Gage Crest Flow (cfs)": "Peak Flow in Mendenhall River (cfs)",
-  "Impacts": "NWS Impacts",
+  Impacts: "NWS Impacts",
 };
 
-const EXCLUDED_COLUMNS = ["Remarks", "Lake Peak Stage (ft)", "Release Volume (ac-ft)"];
+const EXCLUDED_COLUMNS = [
+  "Remarks",
+  "Lake Peak Stage (ft)",
+  "Release Volume (ac-ft)",
+];
 
 const getFloodStageColor = (stage) => {
   if (stage < 9) return "lightyellow";
@@ -55,7 +62,12 @@ const FloodTable = () => {
               return newRow;
             });
 
-            const newHeaders = ["Index", ...Object.keys(processedData[0] || {}).filter(h => h !== "Index")];
+            const newHeaders = [
+              "Index",
+              ...Object.keys(processedData[0] || {}).filter(
+                (h) => h !== "Index",
+              ),
+            ];
 
             setData(processedData);
             setSortedData(processedData);
@@ -71,7 +83,10 @@ const FloodTable = () => {
   }, []);
 
   const handleSort = (column) => {
-    const direction = sortConfig.key === column && sortConfig.direction === "asc" ? "desc" : "asc";
+    const direction =
+      sortConfig.key === column && sortConfig.direction === "asc"
+        ? "desc"
+        : "asc";
 
     const isDateColumn = (value) => {
       return /^\d{4}-\d{2}-\d{2}$/.test(value) || !isNaN(Date.parse(value));
@@ -112,7 +127,9 @@ const FloodTable = () => {
         <p>Loading data...</p>
       ) : (
         <>
-          <h3 className="flood-table-title">Mendenhall Glacial Lake Outburst Flood Events Table</h3>
+          <h3 className="flood-table-title">
+            Mendenhall Glacial Lake Outburst Flood Events Table
+          </h3>
           <h4 className="flood-table-subtitle">
             Select Columns To Explore Flood Data
           </h4>
@@ -121,8 +138,17 @@ const FloodTable = () => {
             <thead>
               <tr>
                 {headers.map((header, index) => (
-                  <th key={index} className="sortable" onClick={() => handleSort(header)}>
-                    {header} {sortConfig.key === header ? (sortConfig.direction === "asc" ? "▲" : "▼") : ""}
+                  <th
+                    key={index}
+                    className="sortable"
+                    onClick={() => handleSort(header)}
+                  >
+                    {header}{" "}
+                    {sortConfig.key === header
+                      ? sortConfig.direction === "asc"
+                        ? "▲"
+                        : "▼"
+                      : ""}
                   </th>
                 ))}
               </tr>
@@ -130,11 +156,16 @@ const FloodTable = () => {
             <tbody>
               {sortedData.length === 0 ? (
                 <tr>
-                  <td colSpan={headers.length} className="no-data">No data available</td>
+                  <td colSpan={headers.length} className="no-data">
+                    No data available
+                  </td>
                 </tr>
               ) : (
                 sortedData
-                  .slice(0, expanded ? sortedData.length : visibleCount + previewCount)
+                  .slice(
+                    0,
+                    expanded ? sortedData.length : visibleCount + previewCount,
+                  )
                   .map((row, rowIndex) => {
                     const isPreviewRow = !expanded && rowIndex >= visibleCount;
                     let opacity = 1;
@@ -145,11 +176,23 @@ const FloodTable = () => {
                     }
 
                     return (
-                      <tr key={rowIndex} style={{ opacity, transition: "opacity 0.3s ease-in-out" }}>
+                      <tr
+                        key={rowIndex}
+                        style={{
+                          opacity,
+                          transition: "opacity 0.3s ease-in-out",
+                        }}
+                      >
                         {headers.map((header, colIndex) => {
-                          const isFloodStageColumn = header === "Peak Water Level at Mendenhall Lake (ft)";
+                          const isFloodStageColumn =
+                            header ===
+                            "Peak Water Level at Mendenhall Lake (ft)";
                           const cellStyle = isFloodStageColumn
-                            ? { backgroundColor: getFloodStageColor(parseFloat(row[header])) }
+                            ? {
+                                backgroundColor: getFloodStageColor(
+                                  parseFloat(row[header]),
+                                ),
+                              }
                             : {};
 
                           return (
@@ -165,7 +208,10 @@ const FloodTable = () => {
             </tbody>
           </table>
           {sortedData.length > visibleCount && (
-            <button className="expand-button" onClick={() => setExpanded(!expanded)}>
+            <button
+              className="expand-button"
+              onClick={() => setExpanded(!expanded)}
+            >
               {expanded ? "Show Less" : "Show More"}
             </button>
           )}

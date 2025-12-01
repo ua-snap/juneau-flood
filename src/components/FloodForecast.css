@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #f9f9f9;
   color: #333;
 }
@@ -25,7 +25,8 @@ body {
 }
 
 /* Content Layout */
-.flood-content, .lake-level-content {
+.flood-content,
+.lake-level-content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,9 +34,9 @@ body {
   flex-wrap: wrap; /* Ensures responsiveness */
 }
 
-.flood-image, 
-.flood-graph, 
-.hydrograph-image, 
+.flood-image,
+.flood-graph,
+.hydrograph-image,
 .risk-chart {
   flex: 1 1 300px; /* Ensures both take equal space */
   max-width: 45%; /* Prevents overly large elements */
@@ -71,23 +72,25 @@ body {
 }
 
 .info-card-close-button {
-  position: absolute; 
-  top: 10px; 
-  right: 10px; 
-  width: 24px; 
-  height: 24px; 
-  background-color: #0044ff; 
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background-color: #0044ff;
   color: white;
   border: none;
   border-radius: 50%;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .info-card-close-button:hover {
-  background-color: #cc0000; 
+  background-color: #cc0000;
   transform: scale(1.1);
 }
 
@@ -110,7 +113,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.risk-chart th, 
+.risk-chart th,
 .risk-chart td {
   padding: 12px 15px;
   border: 1px solid #ddd;
@@ -176,13 +179,14 @@ body {
 
 /* Media Query for Smaller Screens */
 @media (max-width: 768px) {
-  .flood-content, .lake-level-content {
+  .flood-content,
+  .lake-level-content {
     flex-direction: column; /* Stack items vertically */
   }
 
-  .flood-image, 
-  .flood-graph, 
-  .hydrograph-image, 
+  .flood-image,
+  .flood-graph,
+  .hydrograph-image,
   .risk-chart {
     max-width: 90%; /* Adjust size for smaller screens */
   }
@@ -193,9 +197,9 @@ body {
 }
 
 @media (max-width: 576px) {
-  .flood-image, 
-  .flood-graph, 
-  .hydrograph-image, 
+  .flood-image,
+  .flood-graph,
+  .hydrograph-image,
   .risk-chart {
     max-width: 100%; /* Full width for small screens */
   }

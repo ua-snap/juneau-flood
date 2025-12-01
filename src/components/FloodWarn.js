@@ -3,14 +3,22 @@ import "./FloodWarn.css";
 
 const FloodWarn = () => {
   const [floodStatus, setFloodStatus] = useState("Checking flood status...");
-  const [alertUrl, setAlertUrl] = useState("https://water.noaa.gov/gauges/MNDA2");
+  const [alertUrl, setAlertUrl] = useState(
+    "https://water.noaa.gov/gauges/MNDA2",
+  );
 
   useEffect(() => {
     const fetchFloodStatus = async () => {
       try {
-        const response = await fetch("https://api.weather.gov/alerts/active?zone=AKZ025", {
-          headers: { "User-Agent": "JuneauFloodApp (https://github.com/codefean/juneau-flood-beta)" },
-        });
+        const response = await fetch(
+          "https://api.weather.gov/alerts/active?zone=AKZ025",
+          {
+            headers: {
+              "User-Agent":
+                "JuneauFloodApp (https://github.com/codefean/juneau-flood-beta)",
+            },
+          },
+        );
         const data = await response.json();
 
         if (data.features.length > 0) {
@@ -35,7 +43,12 @@ const FloodWarn = () => {
 
   return (
     <div className="flood-warn-header">
-      <a href={alertUrl} target="_blank" rel="noopener noreferrer" className="flood-status-btn">
+      <a
+        href={alertUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flood-status-btn"
+      >
         <span className="flood-status"> NWS: {floodStatus}</span>
       </a>
     </div>

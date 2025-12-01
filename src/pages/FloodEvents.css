@@ -9,13 +9,22 @@
 
 body {
   margin: 0;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    "Open Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 /* Flood Cards Wrapper */
 .flood-cards-container {
@@ -26,7 +35,7 @@ body {
 }
 
 /* Page Title */
-.flood-events-title{
+.flood-events-title {
   text-align: center !important;
   margin: -14px 0 -10px;
   font-size: 2.4rem;
@@ -40,7 +49,7 @@ body {
   color: #0e2b4a;
   margin: 0 0 5px;
   font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* Flood Card - Unified Styling */
@@ -53,10 +62,12 @@ body {
   text-align: center;
   width: 430px;
   max-width: 90%;
-  line-height: .75;
+  line-height: 0.75;
   margin-bottom: 0;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  font-family: 'Open Sans', sans-serif;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  font-family: "Open Sans", sans-serif;
   margin-top: 8px;
 }
 
@@ -71,7 +82,6 @@ body {
   max-width: auto !important;
   width: 90%;
   text-align: left;
-
 }
 
 .floodcard h2 {
@@ -89,7 +99,7 @@ body {
   margin: 0 auto;
   max-width: 950px;
   margin: 20px auto;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* About Card Heading */
@@ -104,7 +114,6 @@ body {
   font-size: 1.05rem;
   color: #000000;
 }
-
 
 /* Hover Effect for Better User Interaction */
 .floodcard:hover {
@@ -128,15 +137,15 @@ body {
   font-size: 1.2rem;
   color: #000000;
   margin-bottom: 10px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* Card Paragraphs */
 .floodcard p {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #000000;
   margin-bottom: 10px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .events-button-wrapper {
@@ -157,7 +166,9 @@ body {
   text-align: center;
   cursor: pointer;
   width: 90px;
-  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  transition:
+    background-color 0.3s ease-in-out,
+    transform 0.2s;
   text-decoration: none;
   align-items: center;
   margin-top: -10px;
@@ -187,7 +198,6 @@ body {
   margin-top: -5px;
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .flood-cards-container {
@@ -195,29 +205,28 @@ body {
     align-items: center;
   }
 
-  .flood-events-title{
+  .flood-events-title {
     text-align: center !important;
     margin: -14px 0 -10px;
     font-size: 1.6rem;
     color: #154f89;
   }
 
-    .image-comparison-container {
+  .image-comparison-container {
     flex-direction: column;
     max-width: 95%;
     margin: 15px auto;
   }
 
   .suicide-basin-info-card2 {
-  margin: 20px auto 10px;
-  padding: 1px 15px;
-  background-color: #f9fbfc;
-  border: 1px solid #dce7ef;
-  border-radius: 16px;
-  line-height: 1.7;
-  text-align: center;
-
-}
+    margin: 20px auto 10px;
+    padding: 1px 15px;
+    background-color: #f9fbfc;
+    border: 1px solid #dce7ef;
+    border-radius: 16px;
+    line-height: 1.7;
+    text-align: center;
+  }
   /* Subheading Below Page Title */
   .flood-events-subheading {
     text-align: center;
@@ -225,11 +234,10 @@ body {
     color: #0e2b4a;
     margin: 0 0 5px;
     font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     margin-bottom: 10px;
     margin-top: 5px;
   }
-  
 
   .floodcard {
     width: 100%;
@@ -246,22 +254,20 @@ body {
   }
 
   .about-floods-card {
-  background: rgb(240, 241, 243); /* Light blue background */
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  max-width: 87%;
-  margin: 20px auto;
-  font-family: 'Open Sans', sans-serif;
-  margin-bottom: -10px;
-  margin-top: -1px;
-}
+    background: rgb(240, 241, 243); /* Light blue background */
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 87%;
+    margin: 20px auto;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: -10px;
+    margin-top: -1px;
+  }
 
   .about-floods-card p {
-font-size: .95rem;
-}
-
-  
+    font-size: 0.95rem;
+  }
 }
 
 /* Mobile-Specific Adjustments */
@@ -321,7 +327,11 @@ font-size: .95rem;
 /* ===== Stats Bar ===== */
 .stats-bar {
   width: 100%;
-  height: clamp(40px, 5vw, 48px); /* shrinks down to 25px on very small screens */
+  height: clamp(
+    40px,
+    5vw,
+    48px
+  ); /* shrinks down to 25px on very small screens */
   background: #dde9f9;
   text-align: center;
   box-sizing: border-box;
@@ -337,7 +347,7 @@ font-size: .95rem;
 }
 
 .stat-number {
-  font-size: clamp(.8rem, 2vw, 1.3rem);
+  font-size: clamp(0.8rem, 2vw, 1.3rem);
   font-weight: bold;
   color: #13334f;
   white-space: nowrap;
@@ -346,13 +356,12 @@ font-size: .95rem;
 
 .stat-label {
   margin-top: 3px;
-  font-size: clamp(.7rem, 1.5vw, .9rem);
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
   margin-bottom: 53.5px !important;
   color: #13334f;
   white-space: nowrap;
-  line-height: .24;
+  line-height: 0.24;
 }
-
 
 .stat {
   position: relative;
@@ -405,7 +414,6 @@ font-size: .95rem;
   white-space: nowrap;
 }
 
-
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -413,32 +421,30 @@ font-size: .95rem;
 }
 
 @media (max-width: 915px) {
-
   /* Match researchteam.css mobile formatting */
 
   .stats-overlay {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: clamp(1px, 1vw, 14px);
-}
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: clamp(1px, 1vw, 14px);
+  }
 
-.stat-number {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  font-weight: bold;
-  color: #13334f;
-  white-space: nowrap;
-}
+  .stat-number {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: bold;
+    color: #13334f;
+    white-space: nowrap;
+  }
 
-.stat-label {
-  margin-top: 3px;
-  font-size: clamp(.45rem, 1.5vw, 1rem);
-  color: #13334f;
-  white-space: nowrap;
-}
+  .stat-label {
+    margin-top: 3px;
+    font-size: clamp(0.45rem, 1.5vw, 1rem);
+    color: #13334f;
+    white-space: nowrap;
+  }
 
-.stat-tooltip {
-visibility: hidden;
-}
-
+  .stat-tooltip {
+    visibility: hidden;
+  }
 }

@@ -9,7 +9,7 @@ const TooltipMarker = ({ markers, handleMarkerClick, activeInfo, imageId }) => {
           key={index}
           className="info-marker"
           style={{
-            top: marker.top,  // Position in percentage
+            top: marker.top, // Position in percentage
             left: marker.left, // Position in percentage
           }}
           onClick={(e) => handleMarkerClick(marker, e, imageId)}
@@ -30,4 +30,3 @@ const TooltipMarker = ({ markers, handleMarkerClick, activeInfo, imageId }) => {
 };
 
 export default TooltipMarker;
-

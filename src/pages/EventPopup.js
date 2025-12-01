@@ -32,8 +32,9 @@ const EventPopup = () => {
         <h2 id="event-popup-title">Dashboard Feedback & Events</h2>
 
         <p className="event-text">
-          We’re seeking your feedback to help improve the Juneau Flood Dashboard. 
-          Join one of the upcoming events or share your ideas through the online form.
+          We’re seeking your feedback to help improve the Juneau Flood
+          Dashboard. Join one of the upcoming events or share your ideas through
+          the online form.
         </p>
 
         <div className="button-wrapper">

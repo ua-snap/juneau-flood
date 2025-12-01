@@ -1,21 +1,20 @@
 .map-wrapper-3 {
   position: relative;
   width: 100% !important;
-  height: 110px; 
-  border-radius: 6px; 
-  overflow: hidden; 
+  height: 110px;
+  border-radius: 6px;
+  overflow: hidden;
   margin: auto;
-  
 }
 
-.map-container-3{
+.map-container-3 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100% !important;
   height: 80% !important;
   border-radius: 6px; /* match wrapper */
-} 
+}
 /* Floating Data Box */
 .map-wrapper-3 .data-box2 {
   position: relative;
@@ -33,11 +32,10 @@
 }
 
 .map-wrapper-3 .data-box2 p {
-  margin: .5px 0;
-  font-size: .8rem;
+  margin: 0.5px 0;
+  font-size: 0.8rem;
   font-weight: 900;
 }
-
 
 .map-wrapper3 {
   position: relative;
@@ -84,8 +82,6 @@
   font-size: 0.9rem;
 }
 
-
-
 /* ---------------------------
    Mobile Responsive Styles
 ----------------------------*/
@@ -96,7 +92,7 @@
   }
 
   .data-box {
-visibility: hidden;
+    visibility: hidden;
   }
 
   .data-box h4 {
@@ -128,6 +124,6 @@ visibility: hidden;
   }
 
   .fullscreen-btn {
-visibility: hidden;
+    visibility: hidden;
   }
 }

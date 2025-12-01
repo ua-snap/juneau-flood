@@ -14,8 +14,6 @@
   width: 400px;
 }
 
-
-
 .search-bar-container input {
   flex: 1;
   padding: 6px 8px;
@@ -31,9 +29,8 @@
 }
 
 a:focus {
-    outline: none;
+  outline: none;
 }
-
 
 .search-bar-container button {
   background: rgba(35, 123, 207, 0.8);
@@ -50,29 +47,22 @@ a:focus {
   background: rgba(50, 150, 255, 0.9);
 }
 
-
 @media (max-width: 1057px) {
-
   .search-bar-container {
     top: 110px !important;
   }
 }
 @media (max-width: 580px) {
-
   .search-bar-container {
     top: 90px !important;
   }
 }
 
-
 @media (max-width: 360px) {
-
   .search-bar-container {
     top: 100px !important;
   }
 }
-
-
 
 .dropdown-suggestions {
   position: absolute;
@@ -101,12 +91,9 @@ a:focus {
   background: rgba(255, 255, 255, 0.15);
 }
 
-
 @media (max-width: 800px) {
-
-
   .mapboxgl-popup {
-    pointer-events: auto; 
+    pointer-events: auto;
   }
 }
 
@@ -120,9 +107,7 @@ a:focus {
   }
 }
 
-
 @media (max-width: 850px) {
-
   .search-bar-container {
     top: 105px !important;
   }
@@ -131,86 +116,75 @@ a:focus {
 @media (max-width: 768px) {
   .search-bar-container {
     top: 100px !important;
-}
+  }
 
-    .dropdown-suggestions {
-  position: absolute;
-  top: 35px !important;
-  max-height: 30px;
-  width: 99% !important;
-    }
-
+  .dropdown-suggestions {
+    position: absolute;
+    top: 35px !important;
+    max-height: 30px;
+    width: 99% !important;
+  }
 }
 @media (max-width: 360px) {
-    .dropdown-suggestions {
-  position: absolute;
-  top: 38.5px;
-  left: 0;
-  max-height: 100px;
-    }
+  .dropdown-suggestions {
+    position: absolute;
+    top: 38.5px;
+    left: 0;
+    max-height: 100px;
+  }
 }
 
-
 @media (max-width: 667px) {
-
   .search-bar-container {
     top: 100px !important;
     width: 80%;
   }
 
   .dropdown-suggestions {
-  position: absolute;
-  top: 38.5px;
-  left: 0;
-  width: 85%;
-
-}
+    position: absolute;
+    top: 38.5px;
+    left: 0;
+    width: 85%;
+  }
 }
 
 @media (max-width: 445px) {
-
   .search-bar-container {
     top: 100px !important;
     width: 90%;
   }
 
   .dropdown-suggestions {
-  position: absolute;
-  top: 38.5px;
-  left: 0;
-  width: 85%;
-
-}
+    position: absolute;
+    top: 38.5px;
+    left: 0;
+    width: 85%;
+  }
 }
 
 @media (max-width: 443px) {
-
   .search-bar-container {
     top: 95px !important;
     width: 90%;
   }
 
   .dropdown-suggestions {
-  position: absolute;
-  top: 38.5px;
-  left: 0;
-  width: 85%;
-
+    position: absolute;
+    top: 38.5px;
+    left: 0;
+    width: 85%;
+  }
 }
-}
-
 
 @media (max-width: 359px) {
-
   .search-bar-container {
-display: none;
+    display: none;
   }
 
   .dropdown-suggestions {
-  position: absolute;
-  top: 38.5px;
-  left: 0;
-  width: 85%;
-
-}
+    position: absolute;
+    top: 38.5px;
+    left: 0;
+    width: 85%;
+  }
 }

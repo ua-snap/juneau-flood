@@ -2,26 +2,24 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import "./FloodImages.css"; // Import styles
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 const FloodImage = () => {
-const images = [
-  {
-    src: "https://www.weather.gov/images/ajk/suicideBasin/archive/2022/SuicideBasinLoop_Raw_2022_Compressed.gif",
-    title: "2022",
-  },
-  {
-    src: "https://www.weather.gov/images/ajk/suicideBasin/archive/2023/SuicideBasinLoop_Raw_2023_Compressed.gif",
-    title: "2023",
-  },
-  {
-    src: "https://www.climate.gov/sites/default/files/2024-08/SuicideBasinOutburst2024.gif",
-    title: "2024",
-  }
-];
-
+  const images = [
+    {
+      src: "https://www.weather.gov/images/ajk/suicideBasin/archive/2022/SuicideBasinLoop_Raw_2022_Compressed.gif",
+      title: "2022",
+    },
+    {
+      src: "https://www.weather.gov/images/ajk/suicideBasin/archive/2023/SuicideBasinLoop_Raw_2023_Compressed.gif",
+      title: "2023",
+    },
+    {
+      src: "https://www.climate.gov/sites/default/files/2024-08/SuicideBasinOutburst2024.gif",
+      title: "2024",
+    },
+  ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loading, setLoading] = useState(false); // Assuming static content, but keeping this in case of dynamic loading later
@@ -56,7 +54,10 @@ const images = [
         <p>Loading data...</p>
       ) : (
         <>
-          <h3 className="flood-image-title"> Historical Suicide Basin Flood Season Timelapses</h3>
+          <h3 className="flood-image-title">
+            {" "}
+            Historical Suicide Basin Flood Season Timelapses
+          </h3>
           <h4 className="flood-image-subtitle">
             Select Arrows to See Annual Flood Events
           </h4>

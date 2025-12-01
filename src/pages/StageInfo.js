@@ -5,7 +5,8 @@ const floodStages = [
   {
     stage: "Action Stage",
     level: "8-9 ft",
-    impacts: "Represents the need to take some type of mitigation action in preparation for possible significant flood event.",
+    impacts:
+      "Represents the need to take some type of mitigation action in preparation for possible significant flood event.",
     className: "action-stage",
   },
   {

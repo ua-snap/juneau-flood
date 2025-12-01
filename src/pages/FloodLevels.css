@@ -1,15 +1,24 @@
-@import 'mapbox-gl/dist/mapbox-gl.css';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
-
+@import "mapbox-gl/dist/mapbox-gl.css";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 /* Base Styles */
 body {
   margin: 0;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    "Open Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
 }
 
 #map {
@@ -21,13 +30,13 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 /* Variables */
 :root {
   --shared-width: 300px;
-  
 }
 
 #controls {
@@ -37,15 +46,10 @@ code {
   z-index: 1;
 }
 
-
-
 .mapboxgl-popup,
 .mapboxgl-popup * {
-  z-index: 10001;   /* beat the overlay */
-  
-  
+  z-index: 10001; /* beat the overlay */
 }
-
 
 .mapboxgl-popup {
   max-width: 250px;
@@ -65,13 +69,11 @@ code {
   height: auto !important;
 }
 
-
 .mapboxgl-popup-content h4 {
   margin: 0 0 6px;
   font-size: 1.1rem;
   font-weight: 600;
 }
-
 
 .mapboxgl-popup-content p {
   margin: 0;
@@ -80,11 +82,9 @@ code {
   white-space: normal;
 }
 
-
 .mapboxgl-popup-tip {
   border-top-color: rgba(0, 0, 0, 0.6) !important;
 }
-
 
 .mapboxgl-popup-close-button {
   color: white;
@@ -98,9 +98,6 @@ code {
   border-radius: 4px;
 }
 
-
-
-
 header h1 {
   font-size: clamp(16px, 6vw, 36px);
   font-weight: 700;
@@ -110,20 +107,18 @@ header h1 {
   overflow: hidden;
 }
 
-
 .level-card {
-position: relative;
+  position: relative;
   margin: -10px 0 5px -1px !important;
   padding: 1.5px !important;
   width: 297px;
   color: white;
   z-index: 10;
-  background: rgba(105, 104, 104, 0.343); 
+  background: rgba(105, 104, 104, 0.343);
   backdrop-filter: blur(3px);
   border-radius: 8px;
   margin-top: -15px !important;
 }
-
 
 .level-card p {
   font-size: 15px;
@@ -135,10 +130,8 @@ position: relative;
   line-height: 12.5px;
 }
 
-
-
 @media (max-width: 851px) {
-    .level-card {
+  .level-card {
     display: none !important;
   }
 }
@@ -149,13 +142,9 @@ position: relative;
   }
 }
 
-
-
-
 .mapboxgl-popup-tip {
-  display: none; 
+  display: none;
 }
-
 
 .usgs-marker {
   width: 10px;
@@ -171,7 +160,6 @@ position: relative;
   background-color: rgb(28, 80, 159) !important;
 }
 
-
 .menu-toggle-button,
 .style-toggle-button {
   padding: 8px 12px;
@@ -180,7 +168,9 @@ position: relative;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
   color: white;
   position: absolute;
   z-index: 2;
@@ -244,7 +234,6 @@ position: relative;
   display: block;
 }
 
-
 .hesco-toggle-button {
   color: rgb(255, 255, 255);
   font-size: 15px !important;
@@ -264,7 +253,6 @@ position: relative;
   position: relative;
 }
 
-
 .hesco-toggle-button::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -283,8 +271,6 @@ position: relative;
   opacity: 0;
   pointer-events: none;
   z-index: 999;
-
-  
 }
 
 .hesco-toggle-button::before {
@@ -304,13 +290,10 @@ position: relative;
   opacity: 1;
 }
 
-
 .hesco-toggle-button:disabled:hover::after,
 .hesco-toggle-button:disabled:hover::before {
   opacity: 1;
 }
-
-
 
 .hesco-off {
   background-color: rgba(66, 65, 65, 0.6);
@@ -332,7 +315,6 @@ position: relative;
   background-color: #218838 !important;
 }
 
-
 @media (max-width: 850px) {
   .hesco-toggle-button {
     display: none !important;
@@ -344,8 +326,6 @@ position: relative;
     display: block;
   }
 }
-
-
 
 @media (max-width: 850px) {
   #controls {
@@ -364,26 +344,21 @@ position: relative;
     text-align: center !important;
   }
 
-
   .hesco-toggle-button {
-  display: none;
- 
-
-}
+    display: none;
+  }
   .level-card {
     position: relative;
     width: 100%;
     margin-top: -20px !important;
   }
-  
+
   .level-card p {
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 5px;
     color: #ffffff;
   }
-
-
 }
 
 @media (min-width: 769px) {
@@ -409,8 +384,6 @@ position: relative;
     font-weight: bold;
     margin: 5px 0;
   }
-
-  
 }
 
 .map-loading-overlay {
@@ -424,12 +397,10 @@ position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  pointer-events: none; 
+  pointer-events: none;
   padding: 20px;
   box-sizing: border-box;
 }
-
-
 
 @media (max-width: 600px) {
   .spinner {
@@ -444,50 +415,46 @@ position: relative;
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
 
 @media (max-width: 1056px) {
-#controls {
-  position: absolute;
-  top: 165px !important;
-  left: 15px;
-  z-index: 1;
-}
-
-
+  #controls {
+    position: absolute;
+    top: 165px !important;
+    left: 15px;
+    z-index: 1;
+  }
 }
 
 @media (max-width: 922px) {
-#controls {
-  position: absolute;
-  left: 15px;
-  z-index: 1;
-}
+  #controls {
+    position: absolute;
+    left: 15px;
+    z-index: 1;
+  }
 }
 
 @media (max-width: 667px) {
-#controls {
-  position: absolute;
-  top: 165px !important;
-  left: 15px;
-  z-index: 1;
-}
-
-
+  #controls {
+    position: absolute;
+    top: 165px !important;
+    left: 15px;
+    z-index: 1;
+  }
 }
 
 @media (max-width: 374px) {
-#controls {
-display: none !important;
+  #controls {
+    display: none !important;
+  }
 }
-}
-
 
 .hesco-toggle-button-mobile {
   position: absolute;
-  bottom: 73px; 
+  bottom: 73px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(61, 61, 61, 0.6);
@@ -513,8 +480,7 @@ display: none !important;
 }
 
 @media (max-width: 361px) {
-.hesco-toggle-button-mobile{
-  position: absolute;
-}
-
+  .hesco-toggle-button-mobile {
+    position: absolute;
+  }
 }

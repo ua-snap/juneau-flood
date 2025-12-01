@@ -17,7 +17,6 @@
 }
 
 @media (max-width: 1059px) {
-
   .flood-records-container {
     top: 110px !important;
   }
@@ -25,7 +24,6 @@
 
 .flood-records-container.expanded {
   width: 163px;
-  
 }
 
 .flood-records-title {
@@ -34,7 +32,7 @@
   border: none;
   color: #fff;
   padding: 6px 7px;
-  font-size: .96rem;
+  font-size: 0.96rem;
   border-radius: 6px;
   line-height: 1rem;
   font-weight: bold !important;
@@ -42,7 +40,10 @@
   margin-top: 4px;
   text-decoration: none;
   text-align: center;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .flood-records-title {
@@ -63,10 +64,11 @@
   width: 163px;
   text-align: center;
   visibility: hidden;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
   z-index: 25;
 }
-
 
 .flood-events-tooltip::before {
   content: "";
@@ -85,7 +87,6 @@
   transform: translateX(-50%) translateY(3px);
 }
 
-
 .flood-records-container:hover .flood-records-title {
   background: rgba(35, 123, 207, 0.8);
 }
@@ -93,7 +94,6 @@
 .flood-records-container:hover .flood-records-title:hover {
   background: rgba(50, 150, 255, 0.9);
 }
-
 
 .flood-records-row {
   position: relative;
@@ -119,7 +119,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 0;
-  transition: width 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    width 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   opacity: 0.89;
 }
 
@@ -140,7 +143,9 @@
   font-size: 16px;
   font-weight: 600;
   white-space: nowrap;
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
 }
 
 .default-label {
@@ -168,7 +173,6 @@
   font-weight: 400;
   margin-left: 2px;
   opacity: 1;
-  
 }
 
 .flood-count {
@@ -186,7 +190,6 @@
   transform: translateY(50%);
   opacity: 0;
 }
-
 
 .flood-records-container.expanded .record-marker {
   opacity: 1;
@@ -254,7 +257,9 @@
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
   z-index: 10;
   font-weight: 600;
 }
@@ -273,7 +278,7 @@
   opacity: 1;
 }
 
-@media (max-width: 850px) { 
+@media (max-width: 850px) {
   .flood-records-container {
     display: none;
   }

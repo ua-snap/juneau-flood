@@ -61,7 +61,7 @@
 }
 
 /* Table Cells */
-.flood-stage-table th, 
+.flood-stage-table th,
 .flood-stage-table td {
   padding: 12px;
   text-align: left;
@@ -106,7 +106,7 @@
     height: 400px; /* Prevents height expansion */
   }
 
-  .flood-stage-table th, 
+  .flood-stage-table th,
   .flood-stage-table td {
     padding: 10px;
     font-size: 14px;

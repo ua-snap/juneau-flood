@@ -15,10 +15,8 @@ export default function Topographic3DTerrainMap() {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const lakes = useMemo(
-    () => [
-      { name: "Mendenhall Valley", orbitCenter: [-134.58650, 58.3879] }
-    ],
-    []
+    () => [{ name: "Mendenhall Valley", orbitCenter: [-134.5865, 58.3879] }],
+    [],
   );
 
   const [lakeIndex, setLakeIndex] = useState(0);
@@ -59,7 +57,6 @@ export default function Topographic3DTerrainMap() {
     mapRef.current = map;
 
     map.on("load", () => {
-
       map.addSource("mapbox-dem", {
         type: "raster-dem",
         url: "mapbox://mapbox.mapbox-terrain-dem-v1",
@@ -68,7 +65,6 @@ export default function Topographic3DTerrainMap() {
       });
 
       map.setTerrain({ source: "mapbox-dem", exaggeration: 0.9 });
-
 
       map.setLight({
         anchor: "map",
@@ -85,22 +81,20 @@ export default function Topographic3DTerrainMap() {
         "star-intensity": 0.15,
       });
 
-
-
       map.addSource("flood73", {
         type: "vector",
-        url: "mapbox://mapfean.65em8or7"
+        url: "mapbox://mapfean.65em8or7",
       });
 
       map.addLayer({
         id: "flood73-fill",
         type: "fill",
         source: "flood73",
-        "source-layer": "73",  
+        "source-layer": "73",
         paint: {
           "fill-color": "#c2185b",
-          "fill-opacity": 0.5
-        }
+          "fill-opacity": 0.5,
+        },
       });
 
       let angle = 0;

@@ -29,13 +29,13 @@
 }
 
 /* Flex layout to push footer down */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
 }
-
 
 .footer-logos {
   display: flex;
@@ -48,17 +48,15 @@ html, body {
   margin-bottom: 15px;
 }
 
-
 .footer-logo {
-  max-width: 170px;   /* bump this up */
-  max-height: 80px;   /* bump this up too */
+  max-width: 170px; /* bump this up */
+  max-height: 80px; /* bump this up too */
   width: 100%;
   height: auto;
   object-fit: contain;
   display: block;
   margin: 0 auto;
 }
-
 
 /* Desktop */
 @media screen and (min-width: 1024px) {
@@ -77,7 +75,6 @@ html, body {
     max-height: 70px;
   }
 }
-
 
 /* Mobile */
 @media screen and (max-width: 600px) {
@@ -102,4 +99,3 @@ html, body {
     margin-top: 15px;
   }
 }
-
