@@ -445,16 +445,6 @@ const Home = () => {
         </div>
 
         <div className="home-about-card">
-          <h3>Website Analytics</h3>
-          <div className="analytics-iframe-wrapper">
-            <iframe
-              title="Public Analytics Dashboard"
-              src="https://lookerstudio.google.com/embed/reporting/1f1348f9-369e-4e90-9485-45fc7b2cae7f/page/lpBOF?hl=en"
-            ></iframe>
-          </div>
-        </div>
-
-        <div className="home-about-card">
           <h3>Contact Us</h3>
           <p>
             This dashboard is maintained by the University of Alaska Southeast.
