@@ -47,8 +47,7 @@ const FloodGraph = () => {
             let recentEvent = null;
 
             result.data.forEach((row) => {
-              const id =
-                row["Crest Date"] + row["Crest Stage D.S. Gage (ft)"];
+              const id = row["Crest Date"] + row["Crest Stage D.S. Gage (ft)"];
               const stage = parseFloat(row["Crest Stage D.S. Gage (ft)"]);
               const color = getFloodStageColor(stage);
 
@@ -63,8 +62,7 @@ const FloodGraph = () => {
               eventCardDataProcessed.push({
                 id,
                 releaseDate: row["Release Start Date"] || "Unknown",
-                releaseStage:
-                  row["Release Stage D.S. Gage (ft)"] || "Unknown",
+                releaseStage: row["Release Stage D.S. Gage (ft)"] || "Unknown",
                 crestDate: row["Crest Date"],
                 crestStage: row["Crest Stage D.S. Gage (ft)"],
                 color,
@@ -80,8 +78,8 @@ const FloodGraph = () => {
 
             setScatterData(
               scatterDataProcessed.sort(
-                (a, b) => new Date(a.x) - new Date(b.x)
-              )
+                (a, b) => new Date(a.x) - new Date(b.x),
+              ),
             );
             setEventCardData(eventCardDataProcessed);
             setMaxFloodEvent(maxEvent);
@@ -98,7 +96,7 @@ const FloodGraph = () => {
   // === Interactions ===
   const handlePointClick = (dataPoint) => {
     const matchingEvent = eventCardData.find(
-      (event) => event.id === dataPoint.id
+      (event) => event.id === dataPoint.id,
     );
     setSelectedEvent(matchingEvent);
     setClickedOnPoint(true);
@@ -126,10 +124,8 @@ const FloodGraph = () => {
     const { cx, cy, fill, payload } = props;
 
     const isHovered = hoveredPoint === payload.id;
-    const isSelected =
-      selectedEvent && selectedEvent.id === payload.id;
-    const isMaxFlood =
-      maxFloodEvent && payload.id === maxFloodEvent.id;
+    const isSelected = selectedEvent && selectedEvent.id === payload.id;
+    const isMaxFlood = maxFloodEvent && payload.id === maxFloodEvent.id;
     const isRecentFlood =
       recentFloodEvent && payload.id === recentFloodEvent.id;
 
@@ -141,9 +137,7 @@ const FloodGraph = () => {
           r={isHovered ? 9 : isSelected ? 7 : 5}
           fill={fill}
           className="scatter-point"
-          stroke={
-            isMaxFlood ? "hotpink" : isRecentFlood ? "blue" : "none"
-          }
+          stroke={isMaxFlood ? "hotpink" : isRecentFlood ? "blue" : "none"}
           strokeWidth={isMaxFlood || isRecentFlood ? 3 : 0}
         />
       </g>
@@ -152,10 +146,7 @@ const FloodGraph = () => {
 
   // === UI ===
   return (
-    <div
-      className="flood-graph-container"
-      onClick={handleBackgroundClick}
-    >
+    <div className="flood-graph-container" onClick={handleBackgroundClick}>
       {loading ? (
         <div className="loading">Loading flood data...</div>
       ) : (
@@ -264,20 +255,18 @@ const FloodGraph = () => {
             >
               <h3 className="event-title">Flood Event Info</h3>
               <p>
-                <strong>Release Start Date:</strong>{" "}
-                {selectedEvent.releaseDate}
+                <strong>Release Start Date:</strong> {selectedEvent.releaseDate}
               </p>
               <p>
-                <strong>Pre-flood Level:</strong>{" "}
-                {selectedEvent.releaseStage} ft
+                <strong>Pre-flood Level:</strong> {selectedEvent.releaseStage}{" "}
+                ft
               </p>
               <p>
                 <strong>Flood Peak Level Date:</strong>{" "}
                 {selectedEvent.crestDate}
               </p>
               <p>
-                <strong>Flood Peak Level:</strong>{" "}
-                {selectedEvent.crestStage} ft
+                <strong>Flood Peak Level:</strong> {selectedEvent.crestStage} ft
               </p>
             </div>
           )}

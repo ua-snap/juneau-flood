@@ -1,11 +1,10 @@
-
 :root {
   --frosted-bg: rgba(0, 0, 0, 0.6);
   --frosted-blur: blur(4px);
   --accent-color: #237bcf;
   --accent-hover: rgba(50, 150, 255, 0.9);
   --radius: 8px;
-  --font-body: 'Open Sans', sans-serif;
+  --font-body: "Open Sans", sans-serif;
 }
 
 .search-bar-container.mobile-search {
@@ -52,7 +51,9 @@
   padding: 10px 12px;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.15s ease;
+  transition:
+    background-color 0.25s ease,
+    transform 0.15s ease;
 }
 
 .mobile-search .search-button:hover,

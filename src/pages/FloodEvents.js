@@ -3,7 +3,7 @@ import Papa from "papaparse";
 import FloodGraph from "./FloodGraph";
 import FloodTable from "./FloodTable";
 import "./FloodEvents.css";
-import CompareImage from "react-compare-image"; 
+import CompareImage from "react-compare-image";
 
 const S3_CSV_URL =
   "https://juneauflood-basin-images.s3.us-west-2.amazonaws.com/FloodEvents.csv";
@@ -32,82 +32,81 @@ const FloodEvents = () => {
   const [latestFloodEvent, setLatestFloodEvent] = useState(null);
   const [largestFloodEvent, setLargestFloodEvent] = useState(null);
   const [totalEvents, setTotalEvents] = useState(0);
-  const beforeImage = "https://juneauflood-basin-images.s3.us-west-2.amazonaws.com/1893_glacier.jpg";
-  const afterImage = "https://juneauflood-basin-images.s3.us-west-2.amazonaws.com/2018_glacier.jpg";
-
+  const beforeImage =
+    "https://juneauflood-basin-images.s3.us-west-2.amazonaws.com/1893_glacier.jpg";
+  const afterImage =
+    "https://juneauflood-basin-images.s3.us-west-2.amazonaws.com/2018_glacier.jpg";
 
   const Stat = ({ target, label, tooltip, showPlus = false }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
+    const [count, setCount] = useState(0);
+    const ref = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const [showTooltip, setShowTooltip] = useState(false);
 
+    // Detect numeric targets
+    const isNumeric = typeof target === "number" && !isNaN(target);
 
-  // Detect numeric targets
-  const isNumeric = typeof target === "number" && !isNaN(target);
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.5 },
+      );
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.5 }
-    );
+      if (ref.current) observer.observe(ref.current);
+      return () => observer.disconnect();
+    }, []);
 
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+    useEffect(() => {
+      if (isVisible && isNumeric) {
+        let current = 0;
+        const increment = Math.ceil(target / 200);
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          setCount(current);
+        }, 20);
+        return () => clearInterval(timer);
+      }
+    }, [isVisible, target, isNumeric]);
 
-  useEffect(() => {
-    if (isVisible && isNumeric) {
-      let current = 0;
-      const increment = Math.ceil(target / 200);
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
-        }
-        setCount(current);
-      }, 20);
-      return () => clearInterval(timer);
-    }
-  }, [isVisible, target, isNumeric]);
+    return (
+      <div
+        className="stat"
+        ref={ref}
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+      >
+        <span className="stat-number">
+          {isNumeric ? (
+            <>
+              {count}
+              {showPlus && "+"}
+            </>
+          ) : (
+            target || "—"
+          )}
+        </span>
 
-  return (
-    <div
-      className="stat"
-      ref={ref}
-      onMouseEnter={() => setShowTooltip(true)}
-      onMouseLeave={() => setShowTooltip(false)}
-    >
-      <span className="stat-number">
-        {isNumeric ? (
-          <>
-            {count}
-            {showPlus && "+"}
-          </>
-        ) : (
-          target || "—"
-        )}
-      </span>
+        <p className="stat-label">{label}</p>
 
-      <p className="stat-label">{label}</p>
-
-      {showTooltip && tooltip && (
-        <div className="stat-tooltip">
-          <div className="stat-tooltip-content">
-            <p>{tooltip}</p>
+        {showTooltip && tooltip && (
+          <div className="stat-tooltip">
+            <div className="stat-tooltip-content">
+              <p>{tooltip}</p>
+            </div>
           </div>
-        </div>
-      )}
-    </div>
-  );
-};
-
+        )}
+      </div>
+    );
+  };
 
   useEffect(() => {
     fetch(S3_CSV_URL, { cache: "no-cache" })
@@ -149,10 +148,10 @@ const FloodEvents = () => {
               // Largest flood event
               const largest = filteredData.reduce((max, row) => {
                 const currentPeak = parseFloat(
-                  row["Peak Water Level at Mendenhall Lake (ft)"]
+                  row["Peak Water Level at Mendenhall Lake (ft)"],
                 );
                 const maxPeak = parseFloat(
-                  max["Peak Water Level at Mendenhall Lake (ft)"]
+                  max["Peak Water Level at Mendenhall Lake (ft)"],
                 );
                 return !isNaN(currentPeak) && currentPeak > (maxPeak || 0)
                   ? row
@@ -166,7 +165,7 @@ const FloodEvents = () => {
               .filter(
                 (row) =>
                   row["Peak Water Level Date"] &&
-                  row["Peak Water Level at Mendenhall Lake (ft)"]
+                  row["Peak Water Level at Mendenhall Lake (ft)"],
               )
               .map((row) => ({
                 x: row["Peak Water Level Date"],
@@ -189,8 +188,7 @@ const FloodEvents = () => {
       {/* === Stats Bar === */}
       <div className="stats-bar">
         <div className="stats-overlay">
-
-                    <Stat
+          <Stat
             target="7/19/11"
             label="First Flood Event Recorded"
             tooltip="First documented flood event at Suicide Basin from NWS above 8ft (Minor Flood Stage)."
@@ -206,7 +204,7 @@ const FloodEvents = () => {
           {largestFloodEvent && (
             <Stat
               target={parseFloat(
-                largestFloodEvent["Peak Water Level at Mendenhall Lake (ft)"]
+                largestFloodEvent["Peak Water Level at Mendenhall Lake (ft)"],
               )}
               label="Largest Flood Peak Recorded (ft)"
               tooltip={`Occurred on ${largestFloodEvent["Peak Water Level Date"]}. Based on Mendenhall Lake water level data.`}
@@ -221,7 +219,6 @@ const FloodEvents = () => {
               tooltip={`Peak Water Level Recorded ${latestFloodEvent["Peak Water Level at Mendenhall Lake (ft)"]} (ft)`}
             />
           )}
-
         </div>
       </div>
 
@@ -242,45 +239,49 @@ const FloodEvents = () => {
           </p>
         </div>
 
-      
-
         {/* === Table + Graph === */}
         <div className="visuals-container">
           <FloodTable headers={headers} data={data} loading={loading} />
           <FloodGraph scatterData={scatterData} />
         </div>
 
-
         {/* Image Comparison Section */}
-        <h3 className="flood-table-title"> Suicide Basin: The Source of Flood Events </h3>
-          <h4 className="flood-table-subtitle">
-            Slide to see the Mendenhall Glacier and Suicide Basin from 1893 - 2018
-          </h4>
-      <div className="image-comparison-container">
-  <CompareImage
-    leftImage={beforeImage}
-    rightImage={afterImage}
-    handle={
-      <div
-        style={{
-          backgroundColor: "#1E90FF",
-          border: "3px solid white",
-          borderRadius: "50%",
-          width: "18px",
-          height: "18px",
-        }}
-      />
-    }
-  />
-</div>
-<div className="suicide-basin-info-card2">
-  <p>
-  Suicide Basin is an over-deepened bedrock basin located approximately 3km up the Mendenhall Glacier in Juneau, Alaska. It was formed by the retreat of the Suicide Glacier,
-  which left an open space alongside the Mendenhall Glacier.
-  Mendenhall Glacier acts as a dam that allows meltwater to accumulate in the basin. When water stored in the basin escapes beneath the ice dam, billions of gallons of water can
-  be released into Mendenhall Lake, leading to flooding downstream.
-  </p>
-            <div className="events-button-wrapper">
+        <h3 className="flood-table-title">
+          {" "}
+          Suicide Basin: The Source of Flood Events{" "}
+        </h3>
+        <h4 className="flood-table-subtitle">
+          Slide to see the Mendenhall Glacier and Suicide Basin from 1893 - 2018
+        </h4>
+        <div className="image-comparison-container">
+          <CompareImage
+            leftImage={beforeImage}
+            rightImage={afterImage}
+            handle={
+              <div
+                style={{
+                  backgroundColor: "#1E90FF",
+                  border: "3px solid white",
+                  borderRadius: "50%",
+                  width: "18px",
+                  height: "18px",
+                }}
+              />
+            }
+          />
+        </div>
+        <div className="suicide-basin-info-card2">
+          <p>
+            Suicide Basin is an over-deepened bedrock basin located
+            approximately 3km up the Mendenhall Glacier in Juneau, Alaska. It
+            was formed by the retreat of the Suicide Glacier, which left an open
+            space alongside the Mendenhall Glacier. Mendenhall Glacier acts as a
+            dam that allows meltwater to accumulate in the basin. When water
+            stored in the basin escapes beneath the ice dam, billions of gallons
+            of water can be released into Mendenhall Lake, leading to flooding
+            downstream.
+          </p>
+          <div className="events-button-wrapper">
             <a
               href="https://www.juneauflood.com/#/suicide-basin"
               target="_blank"
@@ -290,9 +291,8 @@ const FloodEvents = () => {
               Learn More
             </a>
           </div>
+        </div>
       </div>
-</div>
-
     </div>
   );
 };

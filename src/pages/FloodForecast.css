@@ -1,5 +1,6 @@
 /* Global Styles */
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
@@ -8,7 +9,7 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #ffffff;
   color: #000000;
   line-height: 1.6;
@@ -34,7 +35,7 @@ body {
   font-size: 1.3rem;
   color: #0e2b4a;
   font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-top: 10px;
 }
 
@@ -92,7 +93,8 @@ body {
 }
 
 /* Content Layout */
-.flood-content, .lake-level-content {
+.flood-content,
+.lake-level-content {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -112,7 +114,6 @@ body {
   margin: 0 auto;
 }
 
-
 .detail-card {
   background-color: #f9fbfc;
   border: 1px solid #dce7ef;
@@ -127,7 +128,6 @@ body {
   font-size: 16.9px;
 }
 
-
 .flooding-info {
   flex: 1;
   max-width: 700px;
@@ -136,7 +136,6 @@ body {
   min-width: 350px;
   flex-direction: column;
 }
-
 
 .image-pair-container {
   display: flex;
@@ -167,7 +166,6 @@ body {
   max-width: 900px;
 }
 
-
 .lake-level-wrapper {
   display: flex;
   justify-content: space-between;
@@ -177,7 +175,6 @@ body {
   height: auto;
   margin-right: 15px;
 }
-
 
 .lake-level-container {
   display: flex;
@@ -206,7 +203,6 @@ body {
   align-items: center;
 }
 
-
 .more-data-button {
   display: block;
   background-color: #00509e;
@@ -219,7 +215,9 @@ body {
   text-align: center;
   margin: 15px auto;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  transition:
+    background-color 0.3s ease-in-out,
+    transform 0.2s;
 }
 
 .more-data-button:hover {
@@ -257,8 +255,8 @@ body {
 
 .blue-square-tooltip {
   position: absolute;
-  top: 35%; 
-  left: 50%; 
+  top: 35%;
+  left: 50%;
   height: clamp(16.2px, 1.6%, 14px) !important;
   background-color: blue;
   border-radius: 2px;
@@ -275,7 +273,6 @@ body {
     padding: 0 10px;
     font-size: 1.8rem;
   }
-
 
   .flood-forecasting-title {
     font-size: 2rem;
@@ -314,12 +311,10 @@ body {
     margin-right: auto !important;
   }
 
-    .detail-card p,
-  .flooding-info p{
-font-size: 1.1rem;
+  .detail-card p,
+  .flooding-info p {
+    font-size: 1.1rem;
   }
-
-
 
   .hydrograph-container,
   .usgs-image,
@@ -362,12 +357,10 @@ font-size: 1.1rem;
     font-size: clamp(1.3rem, 4vw, 1.5rem);
   }
 
-    .about-forecast-card p {
-  font-size: .95rem !important;
-  color: #000000;
-}
-
-
+  .about-forecast-card p {
+    font-size: 0.95rem !important;
+    color: #000000;
+  }
 
   .image-pair-container {
     flex-direction: column;
@@ -394,17 +387,14 @@ font-size: 1.1rem;
     font-size: 14px;
   }
 
-
   .about-forecast-card {
     padding: 10px !important;
     width: 85%;
     position: relative;
-   margin-left: auto;
-   margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
-
 }
-
 
 @media (max-width: 480px) {
   .flood-tracker h2,
@@ -424,8 +414,6 @@ font-size: 1.1rem;
     flex-direction: column;
     align-items: center;
   }
-
-
 }
 
 .about-forecast-card {
@@ -438,9 +426,8 @@ font-size: 1.1rem;
   margin: 0 auto;
   max-width: 1320px;
   margin: 20px auto;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 40px;
-
 }
 
 .about-forecast-card h3 {

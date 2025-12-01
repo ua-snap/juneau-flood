@@ -19,7 +19,8 @@ const FloodStageBar = () => {
       if (!response.ok) throw new Error("Failed to fetch data");
 
       const data = await response.json();
-      const timeSeries = data?.value?.timeSeries?.[0]?.values?.[0]?.value?.[0]?.value;
+      const timeSeries =
+        data?.value?.timeSeries?.[0]?.values?.[0]?.value?.[0]?.value;
 
       if (!timeSeries) {
         throw new Error("No water level data available");
@@ -37,7 +38,6 @@ const FloodStageBar = () => {
     }
   };
 
-
   useEffect(() => {
     fetchWaterLevels();
     const interval = setInterval(fetchWaterLevels, 5 * 60 * 1000);
@@ -45,11 +45,36 @@ const FloodStageBar = () => {
   }, []);
 
   const stages = [
-    { label: "No Flood Stage", range: [0, 8], color: "#28a745", info: "Water level is below flood risk 0ft - 8ft" },
-    { label: "Action Stage", range: [8, 9], color: "#e9f502", info: "Flooding risk starts 8ft - 9ft" },
-    { label: "Minor Flood Stage", range: [9, 10], color: "#F4A100", info: "Flooding risk 9ft - 10ft" },
-    { label: "Moderate Flood Stage", range: [10, 14], color: "#E2371D", info: "Flooding risk 10ft - 14ft" },
-    { label: "Major Flood Stage", range: [14, Infinity], color: "#9419A3", info: "Flooding risk 14ft+" },
+    {
+      label: "No Flood Stage",
+      range: [0, 8],
+      color: "#28a745",
+      info: "Water level is below flood risk 0ft - 8ft",
+    },
+    {
+      label: "Action Stage",
+      range: [8, 9],
+      color: "#e9f502",
+      info: "Flooding risk starts 8ft - 9ft",
+    },
+    {
+      label: "Minor Flood Stage",
+      range: [9, 10],
+      color: "#F4A100",
+      info: "Flooding risk 9ft - 10ft",
+    },
+    {
+      label: "Moderate Flood Stage",
+      range: [10, 14],
+      color: "#E2371D",
+      info: "Flooding risk 10ft - 14ft",
+    },
+    {
+      label: "Major Flood Stage",
+      range: [14, Infinity],
+      color: "#9419A3",
+      info: "Flooding risk 14ft+",
+    },
   ];
 
   const handleHover = (event, stage) => {
@@ -103,14 +128,22 @@ const FloodStageBar = () => {
   );
 };
 
-const FloodBar = ({ waterLevel, stages, handleHover, handleMouseLeave, hoveredStage }) => {
+const FloodBar = ({
+  waterLevel,
+  stages,
+  handleHover,
+  handleMouseLeave,
+  hoveredStage,
+}) => {
   return (
     <div className="flood-stage-bar">
       {stages.map((stage) => {
-        const isCurrentStage = waterLevel >= stage.range[0] && waterLevel < stage.range[1];
+        const isCurrentStage =
+          waterLevel >= stage.range[0] && waterLevel < stage.range[1];
         const isHovered = hoveredStage === stage.label;
 
-        const backgroundColor = isCurrentStage || isHovered ? stage.color : "#e0e0e0";
+        const backgroundColor =
+          isCurrentStage || isHovered ? stage.color : "#e0e0e0";
 
         return (
           <div
@@ -122,8 +155,11 @@ const FloodBar = ({ waterLevel, stages, handleHover, handleMouseLeave, hoveredSt
             onMouseEnter={(event) => handleHover(event, stage)}
             onMouseLeave={handleMouseLeave}
           >
-            <span className={`stage-label ${!isCurrentStage ? "normal-text" : "bold-text"}`}>
-              {stage.label} {isCurrentStage && <span className="current-water-level"></span>}
+            <span
+              className={`stage-label ${!isCurrentStage ? "normal-text" : "bold-text"}`}
+            >
+              {stage.label}{" "}
+              {isCurrentStage && <span className="current-water-level"></span>}
             </span>
           </div>
         );

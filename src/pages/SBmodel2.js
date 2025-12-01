@@ -17,26 +17,26 @@ export default function Topographic3DTerrainMap() {
 
   // state for location
   const [location, setLocation] = useState({
-      modelOrigin: [-134.575402, 58.393573],
-      orbitCenter: [-134.575402, 58.393573],
+    modelOrigin: [-134.575402, 58.393573],
+    orbitCenter: [-134.575402, 58.393573],
   });
 
   useEffect(() => {
     const { modelOrigin, orbitCenter } = location;
     const modelAltitude = 30;
 
-  // pick zoom level depending on screen width
-  const initialZoom = window.innerWidth < 915 ? 12.2 : 12.7;
+    // pick zoom level depending on screen width
+    const initialZoom = window.innerWidth < 915 ? 12.2 : 12.7;
 
-  const map = new mapboxgl.Map({
-    container: mapContainer.current,
-    style: "mapbox://styles/mapbox/satellite-streets-v12",
-    center: modelOrigin,
-    zoom: initialZoom,
-    pitch: 65,
-    bearing: 0,
-    antialias: true,
-  });
+    const map = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/mapbox/satellite-streets-v12",
+      center: modelOrigin,
+      zoom: initialZoom,
+      pitch: 65,
+      bearing: 0,
+      antialias: true,
+    });
 
     map.on("load", () => {
       map.addSource("mapbox-dem", {
@@ -68,7 +68,7 @@ export default function Topographic3DTerrainMap() {
 
       const mercatorCoord = mapboxgl.MercatorCoordinate.fromLngLat(
         modelOrigin,
-        modelAltitude
+        modelAltitude,
       );
       const modelTransform = {
         translateX: mercatorCoord.x,
@@ -111,7 +111,7 @@ export default function Topographic3DTerrainMap() {
               this.scene.add(this.model);
             },
             undefined,
-            (error) => console.error("❌ Error loading GLB:", error)
+            (error) => console.error("❌ Error loading GLB:", error),
           );
 
           this.renderer = new THREE.WebGLRenderer({
@@ -126,14 +126,14 @@ export default function Topographic3DTerrainMap() {
             .makeTranslation(
               modelTransform.translateX,
               modelTransform.translateY,
-              modelTransform.translateZ
+              modelTransform.translateZ,
             )
             .scale(
               new THREE.Vector3(
                 modelTransform.scale,
                 -modelTransform.scale,
-                modelTransform.scale
-              )
+                modelTransform.scale,
+              ),
             );
 
           this.camera.projectionMatrix = m.multiply(l);

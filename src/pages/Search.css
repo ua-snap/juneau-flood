@@ -7,7 +7,7 @@
   --accent-color: #237bcf;
   --accent-hover: rgba(50, 150, 255, 0.9);
   --radius: 8px;
-  --font-body: 'Open Sans', sans-serif;
+  --font-body: "Open Sans", sans-serif;
 }
 
 /* ==============================
@@ -58,7 +58,6 @@ a:focus {
   transform: none;
 }
 
-
 /* ==============================
    🧾 Input Field
 ============================== */
@@ -88,7 +87,9 @@ a:focus {
   font-size: 0.85rem;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.15s ease;
+  transition:
+    background-color 0.25s ease,
+    transform 0.15s ease;
 }
 
 .search-button:hover,
@@ -142,7 +143,6 @@ a:focus {
   font-size: 0.8rem;
   margin-top: 4px;
 }
-
 
 /* ==============================
    📱 Mobile Only

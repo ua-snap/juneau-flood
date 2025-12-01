@@ -47,96 +47,93 @@
 }
 
 @media (max-width: 850px) {
-.level-card-mobile {
-  position: absolute;
-  top: calc(80px + 8.1%) !important;
+  .level-card-mobile {
+    position: absolute;
+    top: calc(80px + 8.1%) !important;
+  }
 }
-}
-
 
 @media (max-width: 768px) {
-.level-card-mobile {
-  position: absolute;
-  top: calc(80px + 7.5%);
-}
+  .level-card-mobile {
+    position: absolute;
+    top: calc(80px + 7.5%);
+  }
 }
 
 @media (max-width: 443px) {
-.level-card-mobile {
-  position: absolute;
-  top: calc(71px + 7.5%);
-}
+  .level-card-mobile {
+    position: absolute;
+    top: calc(71px + 7.5%);
+  }
 }
 
 @media (max-width: 431px) {
-.level-card-mobile {
-  position: absolute;
-  top: calc(66px + 7.5%);
-}
+  .level-card-mobile {
+    position: absolute;
+    top: calc(66px + 7.5%);
+  }
 }
 
 @media (max-width: 415px) {
-.level-card-mobile {
-  position: absolute;
-  top: calc(70px + 7.5%);
-}
+  .level-card-mobile {
+    position: absolute;
+    top: calc(70px + 7.5%);
+  }
 }
 
 @media (max-width: 391px) {
-.level-card-mobile {
-  position: absolute;
-  top: calc(71px + 7.5%);
-}
+  .level-card-mobile {
+    position: absolute;
+    top: calc(71px + 7.5%);
+  }
 }
 
 @media (max-width: 376px) {
-.level-card-mobile {
-  position: absolute;
-  top: calc(87px + 7.5%); 
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 400px;
-  background: rgba(66, 66, 66, 0.343);
-  backdrop-filter: blur(3px);
-  padding: 6px;
-  border-radius: 8px;
-  color: white;
-  z-index: 4;
-  text-align: center;
-}
+  .level-card-mobile {
+    position: absolute;
+    top: calc(87px + 7.5%);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    background: rgba(66, 66, 66, 0.343);
+    backdrop-filter: blur(3px);
+    padding: 6px;
+    border-radius: 8px;
+    color: white;
+    z-index: 4;
+    text-align: center;
+  }
 
-.level-card-mobile-text {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #ffffff;
-  margin: 4px 0;
-  line-height: 1;
-}
-}
-
-@media (max-width: 361px) {
-.level-card-mobile {
-top: calc(81px + 7.5%) !important; 
-}
-
-.level-card-mobile-text {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #ffffff;
-  margin: 4px 0;
-  line-height: 1;
-}
+  .level-card-mobile-text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 4px 0;
+    line-height: 1;
+  }
 }
 
 @media (max-width: 361px) {
+  .level-card-mobile {
+    top: calc(81px + 7.5%) !important;
+  }
 
-.level-card-mobile-text {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #ffffff;
-  margin: 4px 0;
-  line-height: 1;
-}
+  .level-card-mobile-text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 4px 0;
+    line-height: 1;
+  }
 }
 
+@media (max-width: 361px) {
+  .level-card-mobile-text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 4px 0;
+    line-height: 1;
+  }
+}

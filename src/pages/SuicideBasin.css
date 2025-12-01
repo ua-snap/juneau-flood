@@ -4,7 +4,6 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-
 /* ===============================
    Layout: Suicide Basin Container
 ================================ */
@@ -27,7 +26,6 @@
    Headings & Subheadings
 ================================ */
 
-
 .suicide-basin h2 {
   text-align: center !important;
   margin: -2px 0 -10px;
@@ -35,12 +33,11 @@
   color: #154f89;
 }
 
-.glof-h2{
+.glof-h2 {
   text-align: center;
   color: #154f89;
   font-weight: bold;
 }
-
 
 .live-view-title {
   font-size: 1.9rem;
@@ -51,12 +48,10 @@
   text-align: center;
   font-size: 1.3rem;
   color: #0e2b4a;
-  margin: 0 0  15px;
+  margin: 0 0 15px;
   font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-
-
 
 /* ===============================
    Suicide Basin Info Card
@@ -81,7 +76,6 @@
   margin-bottom: 10px;
 }
 
-
 .suicide-basin-info-card h3 {
   font-size: 1.5rem;
   color: #154f89;
@@ -92,7 +86,6 @@
   font-size: 1.1rem;
   color: #000000;
 }
-
 
 /* ===============================
    GLOF Section
@@ -143,7 +136,6 @@
   color: #000000;
   max-width: 300px;
   text-align: left;
-
 }
 
 .glof-info-card h3 {
@@ -156,9 +148,7 @@
 .glof-info-card p {
   font-size: 1.1rem;
   line-height: 1.5;
-  
 }
-
 
 /* ===============================
    Slider Arrows
@@ -172,7 +162,9 @@
   cursor: pointer;
   z-index: 10;
   padding: 10px;
-  transition: transform 0.2s ease-in-out, color 0.2s;
+  transition:
+    transform 0.2s ease-in-out,
+    color 0.2s;
 }
 
 .slider-arrow:hover {
@@ -187,7 +179,6 @@
 .next {
   right: 10px;
 }
-
 
 /* ===============================
    Live View Section
@@ -207,7 +198,6 @@
   color: inherit;
   font-size: inherit;
 }
-
 
 .live-image {
   flex: 1;
@@ -239,7 +229,7 @@
   padding-top: 56.25%;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   margin: 16px 0 32px;
 }
 
@@ -259,8 +249,6 @@
   color: #6a7685;
   margin-top: 8px;
 }
-
-
 
 /* ===============================
    Responsive Styles
@@ -285,7 +273,6 @@
     align-items: center;
     text-align: center;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -297,17 +284,16 @@
     padding: 15px;
   }
 
-.suicide-basin h2 {
-  margin: -5px 0 -10px !important;
-  font-size: 2rem !important;
-}
+  .suicide-basin h2 {
+    margin: -5px 0 -10px !important;
+    font-size: 2rem !important;
+  }
 
   .suicide-basin-subheading {
-    font-size: .9rem !important;
+    font-size: 0.9rem !important;
     margin-top: 2px;
     margin-bottom: 2px;
   }
-
 
   .basin-image-caption {
     font-size: 13px;
@@ -411,7 +397,6 @@
     text-align: center;
   }
 }
-
 
 .page-wrapper {
   max-width: 1700px;

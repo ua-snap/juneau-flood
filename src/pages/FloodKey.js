@@ -3,8 +3,19 @@ import Papa from "papaparse";
 import "./FloodKey.css";
 
 const customColors = [
-  "#87c210", "#c3b91e", "#e68a1e", "#31a354", "#3182bd", "#124187",
-  "#d63b3b", "#9b3dbd", "#d13c8f", "#c2185b", "#756bb1", "#f59380", "#ba4976",
+  "#87c210",
+  "#c3b91e",
+  "#e68a1e",
+  "#31a354",
+  "#3182bd",
+  "#124187",
+  "#d63b3b",
+  "#9b3dbd",
+  "#d13c8f",
+  "#c2185b",
+  "#756bb1",
+  "#f59380",
+  "#ba4976",
 ];
 
 // Flood levels 8–20 ft
@@ -68,15 +79,14 @@ const FloodKey = () => {
         className="flood-records-title"
       >
         Flood Events
-            <span className="flood-events-tooltip">
-      Recorded glacial lake outbust floods by NWS. Years indicate the highest ever recorded lake levels.
-    </span>
+        <span className="flood-events-tooltip">
+          Recorded glacial lake outbust floods by NWS. Years indicate the
+          highest ever recorded lake levels.
+        </span>
       </a>
 
       {floodLevels.map((level, i) => {
-        const record = floodRecords.find(
-          (r) => Math.floor(r.level) === level
-        );
+        const record = floodRecords.find((r) => Math.floor(r.level) === level);
         const eventCount = eventCounts[level] || 0;
         const offsetPercent = record
           ? ((record.level - level) / 1) * 100
@@ -88,8 +98,10 @@ const FloodKey = () => {
               className="flood-pill"
               style={{
                 backgroundColor: customColors[i],
-                borderTopLeftRadius: i === floodLevels.length - 1 ? "10px" : "0",
-                borderTopRightRadius: i === floodLevels.length - 1 ? "10px" : "0",
+                borderTopLeftRadius:
+                  i === floodLevels.length - 1 ? "10px" : "0",
+                borderTopRightRadius:
+                  i === floodLevels.length - 1 ? "10px" : "0",
                 borderBottomLeftRadius: i === 0 ? "10px" : "0",
                 borderBottomRightRadius: i === 0 ? "10px" : "0",
               }}
@@ -136,4 +148,3 @@ const FloodKey = () => {
 };
 
 export default FloodKey;
-

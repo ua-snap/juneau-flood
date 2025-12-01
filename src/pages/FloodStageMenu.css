@@ -1,23 +1,25 @@
 .accordion-container {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   border-radius: 8px;
   overflow: hidden;
   margin-top: 10px;
-  width: 100%; 
-  max-width: 300px; 
+  width: 100%;
+  max-width: 300px;
   margin-left: -1px;
-  margin-right: auto; 
-  display: flex; 
-  flex-direction: column; 
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .accordion-section {
   cursor: pointer;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   padding: 5px 15px;
   color: rgb(0, 0, 0);
   font-size: 16px;
-  transition: background-color 0.3s ease, padding 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    padding 0.2s ease;
 }
 
 .accordion-section h4 {
@@ -25,45 +27,42 @@
 }
 
 .accordion-content {
-  width: 100%; 
+  width: 100%;
   padding: 1px 10px;
   color: #000000;
   font-size: 14px;
   line-height: 1.35;
-  box-sizing: border-box; 
-  max-height: 145px; 
-  overflow-y: auto; 
-  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  max-height: 145px;
+  overflow-y: auto;
+  font-family: "Open Sans", sans-serif;
 }
 
-
 .action-stage {
-  background-color: #e4e406ea; 
+  background-color: #e4e406ea;
 }
 
 .minor-stage {
-  background-color: #ffaa00ea; 
+  background-color: #ffaa00ea;
 }
 
 .moderate-stage {
-  background-color: #ff4400eb; 
+  background-color: #ff4400eb;
 }
 
 .major-stage {
-  background-color: #b604b6e9; 
+  background-color: #b604b6e9;
 }
 
 .accordion-section:hover {
   opacity: 0.85;
 }
 
-
 @media (max-width: 850px) {
   .accordion-container {
-display: none;
+    display: none;
   }
 }
-
 
 .accordion-title {
   display: flex;

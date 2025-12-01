@@ -28,7 +28,7 @@
   color: #0e2b4a;
   margin: 0 0 20px;
   font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* === ABOUT FLOODS CARD === */
@@ -47,14 +47,12 @@
 .about-feedback-card p {
   font-size: 1rem;
   color: #000000;
-
 }
 
 .about-feedback-card strong {
   color: #003366;
   font-weight: 800;
   margin-bottom: -15px;
-
 }
 
 .about-feedback-card em {
@@ -120,12 +118,12 @@
     font-size: 0.95rem;
   }
   .flood-feedback-subheading {
-  text-align: center;
-  font-size: .9rem;
-  color: #0e2b4a;
-  margin: 0 0 10px;
-  font-weight: bold;
-  margin-top: 5px;
-  font-family: 'Open Sans', sans-serif;
-}
+    text-align: center;
+    font-size: 0.9rem;
+    color: #0e2b4a;
+    margin: 0 0 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    font-family: "Open Sans", sans-serif;
+  }
 }

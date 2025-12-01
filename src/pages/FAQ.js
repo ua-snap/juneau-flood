@@ -14,17 +14,20 @@ const faqData = [
       "Common causes include ice or rock avalanches into the lake, rapid snowmelt, heavy rainfall, or internal weakening of the dam structure.",
   },
   {
-    question: "Does 1ft of additional water in Suicide Basin equate to 1ft of flooding at my house?",
+    question:
+      "Does 1ft of additional water in Suicide Basin equate to 1ft of flooding at my house?",
     answer: "No.",
   },
   {
-    question: "How long does it take the water from Suicide Basin to Mendenhall Valley?",
+    question:
+      "How long does it take the water from Suicide Basin to Mendenhall Valley?",
     answer:
       "Once the glacial dam bursts and water is released from Suicide Basin, it takes around 40 hours for the water to reach Mendenhall Valley.",
   },
   {
     question: "How will climate change affect glacial lake outburst floods?",
-    answer: "Climate change is causing Alaska's glaciers to thin and recede, reducing the size and volume of ice-dammed lakes and leading to fewer or smaller GLOFs over time. However, new glacial lakes may form in different areas as glaciers retreat, and even small GLOFs can pose serious threats to nearby communities and ecosystems.",
+    answer:
+      "Climate change is causing Alaska's glaciers to thin and recede, reducing the size and volume of ice-dammed lakes and leading to fewer or smaller GLOFs over time. However, new glacial lakes may form in different areas as glaciers retreat, and even small GLOFs can pose serious threats to nearby communities and ecosystems.",
   },
   {
     question: "How is Suicide Basin monitored?",
@@ -98,8 +101,9 @@ const FAQ = () => {
           <div className="FAQ-left-inner">
             <div className="about-FAQ-card">
               <p>
-                This page provides information regarding glacial lake outburst floods (GLOFs), ongoing
-                research in Suicide Basin, and additional resources.
+                This page provides information regarding glacial lake outburst
+                floods (GLOFs), ongoing research in Suicide Basin, and
+                additional resources.
               </p>
             </div>
 
@@ -128,16 +132,24 @@ const FAQ = () => {
                   >
                     {faq.answer}
                   </div>
-                  {index !== faqData.length - 1 && <div className="FAQ-divider" />}
+                  {index !== faqData.length - 1 && (
+                    <div className="FAQ-divider" />
+                  )}
                 </div>
               ))}
             </div>
 
             {/* Mobile Resource Links */}
             <div className="FAQ-resource-links-mobile">
-              <ResourceLinksSection title="Flood Safety Resources" links={resourceLinks} />
+              <ResourceLinksSection
+                title="Flood Safety Resources"
+                links={resourceLinks}
+              />
               <div className="faq-margin-top">
-                <ResourceLinksSection title="Educational Resources" links={educationLinks} />
+                <ResourceLinksSection
+                  title="Educational Resources"
+                  links={educationLinks}
+                />
               </div>
             </div>
           </div>
@@ -146,10 +158,16 @@ const FAQ = () => {
 
       {/* Desktop Sidebar */}
       <div className="FAQ-fixed-sidebar-resources">
-        <ResourceLinksSection title="Flood Safety Resources" links={resourceLinks} />
+        <ResourceLinksSection
+          title="Flood Safety Resources"
+          links={resourceLinks}
+        />
       </div>
       <div className="FAQ-fixed-sidebar-education">
-        <ResourceLinksSection title="Educational Resources" links={educationLinks} />
+        <ResourceLinksSection
+          title="Educational Resources"
+          links={educationLinks}
+        />
       </div>
     </div>
   );

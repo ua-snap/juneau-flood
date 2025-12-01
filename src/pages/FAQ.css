@@ -1,20 +1,31 @@
 /* --------------------------------
    Fonts & Base Styles
 -------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    "Open Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
-
 
 /* --------------------------------
    Layout Wrappers
@@ -38,13 +49,12 @@ code {
   overflow-x: hidden;
 }
 
-
 /* --------------------------------
    Titles & Headings
 -------------------------------- */
 .FAQ-title {
   text-align: center;
-  margin:  -20px 0 -10px;
+  margin: -20px 0 -10px;
   font-size: 2.4rem;
   color: #154f89;
 }
@@ -56,7 +66,6 @@ code {
   margin: 0 0 5px;
   font-weight: bold;
 }
-
 
 /* --------------------------------
    About Section
@@ -75,7 +84,6 @@ code {
   font-size: 1.1rem;
   color: #000;
 }
-
 
 /* --------------------------------
    FAQ Table
@@ -117,12 +125,11 @@ code {
   transition: opacity 0.3s ease;
 }
 
-
 .FAQ-row.open .FAQ-answer {
-  max-height: 200px;         /* Set the height limit */
-  overflow-y: auto;          /* Add scroll if content is long */
+  max-height: 200px; /* Set the height limit */
+  overflow-y: auto; /* Add scroll if content is long */
   opacity: 1;
-  padding-right: 4px;        /* Optional: add space for scrollbar */
+  padding-right: 4px; /* Optional: add space for scrollbar */
 }
 
 .FAQ-toggle-icon {
@@ -155,8 +162,6 @@ code {
   background: transparent;
 }
 
-
-
 /* --------------------------------
    Sidebar (Desktop)
 -------------------------------- */
@@ -180,7 +185,6 @@ code {
   text-decoration: underline;
 }
 
-
 /* --------------------------------
    Button Links
 -------------------------------- */
@@ -193,7 +197,9 @@ code {
   font-weight: 600;
   text-align: center;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
   margin-bottom: 12px;
 }
 
@@ -201,7 +207,6 @@ code {
   text-decoration: none;
   filter: brightness(1.05);
 }
-
 
 /* --------------------------------
    Mobile Drawer & Toggle
@@ -232,14 +237,12 @@ code {
   background-color: #103e6f;
 }
 
-
 /* --------------------------------
    Utilities
 -------------------------------- */
 .faq-margin-top {
   margin-top: 20px;
 }
-
 
 /* --------------------------------
    Responsive - Medium Screens (≤1452px)
@@ -259,11 +262,11 @@ code {
 
   .FAQ-title {
     text-align: center;
-    margin:  5px 0 -10px;
+    margin: 5px 0 -10px;
     font-size: 2.4rem;
     color: #154f89;
   }
-  
+
   .FAQ-subheading {
     text-align: center;
     font-size: 1.3rem;
@@ -271,8 +274,6 @@ code {
     margin: 0 0 5px;
     font-weight: bold;
   }
-  
-
 
   .FAQ-container {
     padding: 0 20px;
@@ -292,7 +293,6 @@ code {
     margin: 0 auto;
   }
 
-
   .FAQ-links-section.mobile {
     display: block;
     margin: 20px auto;
@@ -301,11 +301,7 @@ code {
   .FAQ-mobile-toggle {
     display: block;
   }
-
 }
-
-
-
 
 /* --------------------------------
    Responsive - Small Screens (≤800px)
@@ -318,7 +314,7 @@ code {
 
   .FAQ-title {
     font-size: 2rem;
-    margin:  10px 0 -10px;
+    margin: 10px 0 -10px;
   }
 
   .FAQ-subheading {
@@ -356,7 +352,6 @@ code {
     padding: 10px 14px;
   }
 }
-
 
 /* Show on desktop (default) */
 .FAQ-resource-links-mobile {
