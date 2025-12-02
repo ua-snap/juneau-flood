@@ -1,4 +1,6 @@
-# Juneau Flood Website
+# Juneau Glacial Lake Outburst Flood web tool
+
+Originally developed by @codefean and funding provided through the Alaska Climate Adaptation Science Center (AK CASC).
 
 ## Building and Launching Website
 
