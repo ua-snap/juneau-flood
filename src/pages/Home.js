@@ -143,19 +143,9 @@ const faqData = [
         <p>
           Large outburst floods such as the August, 2024 event can raise the
           water level in Mendenhall Lake by 10 ft or more in the course of a few
-          days (see graph below). During smaller GLOFs, such as the July 2015
-          event, the rise in the lake level can be much smaller (~2 ft).
+          days. During smaller GLOFs, such as the July 2015 event, the rise in
+          the lake level can be much smaller (~2 ft).
         </p>
-        <img
-          src="https://basin-images.s3.us-east-2.amazonaws.com/GLOF+Graph.png"
-          alt="GLOF Graph"
-          style={{
-            width: "100%",
-            maxWidth: "600px",
-            marginTop: "1rem",
-            borderRadius: "8px",
-          }}
-        />
       </>
     ),
   },
