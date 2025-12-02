@@ -2,6 +2,7 @@
   "name": "juneau-flood-alpha",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "homepage": "https://www.juneauflood.com/",
   "dependencies": {
     "mapbox-gl": "^3.8.0",
