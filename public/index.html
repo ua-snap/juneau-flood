@@ -23,24 +23,16 @@
     />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>Juneau Glacial Flood Dashboard</title>
-
-    <!-- ✅ Google tag (gtag.js) -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-86ZYFJQPVL"
+      defer
+      src="https://umami.snap.uaf.edu/script.js"
+      data-website-id="d7805764-d96d-44bf-98ef-f77975b02cc6"
+      data-do-not-track="true"
+      data-domains="juneauflood.org"
     ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
 
-      gtag("config", "G-86ZYFJQPVL", {
-        page_path: window.location.pathname,
-      });
-    </script>
+    <title>Juneau Glacial Flood Dashboard</title>
   </head>
 
   <body>

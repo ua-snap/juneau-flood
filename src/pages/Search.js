@@ -2,8 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import "./SearchDesktop.css";
 
-mapboxgl.accessToken =
-  "pk.eyJ1IjoibWFwZmVhbiIsImEiOiJjbTNuOGVvN3cxMGxsMmpzNThzc2s3cTJzIn0.1uhX17BCYd65SeQsW1yibA";
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 // Juneau bounding box (~20mi radius)
 const bbox = "-135.147043,58.097567,-134.027043,58.677567";
@@ -33,7 +32,9 @@ const Search = ({ mapRef }) => {
       const response = await fetch(
         `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
           query,
-        )}.json?autocomplete=true&bbox=${bbox}&proximity=${proximity}&access_token=${mapboxgl.accessToken}`,
+        )}.json?autocomplete=true&bbox=${bbox}&proximity=${proximity}&access_token=${
+          mapboxgl.accessToken
+        }`,
       );
       const data = await response.json();
       setSuggestions(data.features || []);
@@ -65,7 +66,9 @@ const Search = ({ mapRef }) => {
       const response = await fetch(
         `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
           address,
-        )}.json?bbox=${bbox}&proximity=${proximity}&access_token=${mapboxgl.accessToken}`,
+        )}.json?bbox=${bbox}&proximity=${proximity}&access_token=${
+          mapboxgl.accessToken
+        }`,
       );
       const data = await response.json();
 

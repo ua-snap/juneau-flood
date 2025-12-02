@@ -38,7 +38,7 @@ const Header = () => {
             href="https://www.juneauflood.com/#/home"
             target="_blank"
             rel="noopener noreferrer"
-            class="dashboard-link"
+            className="dashboard-link"
           >
             Juneau Glacial Flood Dashboard
           </a>

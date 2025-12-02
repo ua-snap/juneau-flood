@@ -259,8 +259,7 @@ const FloodLevels = () => {
   };
 
   useEffect(() => {
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoibWFwZmVhbiIsImEiOiJjbTNuOGVvN3cxMGxsMmpzNThzc2s3cTJzIn0.1uhX17BCYd65SeQsW1yibA";
+    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
     if (!mapRef.current) {
       mapRef.current = new mapboxgl.Map({
@@ -508,7 +507,9 @@ const FloodLevels = () => {
             onClick={() => {
               if (selectedFloodLevel >= 14) toggleHescoMode();
             }}
-            className={`hesco-toggle-button ${hescoMode ? "hesco-on" : "hesco-off"}`}
+            className={`hesco-toggle-button ${
+              hescoMode ? "hesco-on" : "hesco-off"
+            }`}
             disabled={
               loadingLayers ||
               selectedFloodLevel < 14 ||
@@ -568,7 +569,9 @@ const FloodLevels = () => {
         onClick={() => {
           if (selectedFloodLevel >= 14) toggleHescoMode();
         }}
-        className={`hesco-toggle-button-mobile ${hescoMode ? "hesco-on" : "hesco-off"}`}
+        className={`hesco-toggle-button-mobile ${
+          hescoMode ? "hesco-on" : "hesco-off"
+        }`}
         disabled={
           loadingLayers || selectedFloodLevel < 14 || selectedFloodLevel > 18
         }
