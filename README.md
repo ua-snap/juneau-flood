@@ -47,3 +47,9 @@ aws s3 cp build/ s3://juneauflood.org/ --acl public-read --recursive
 ```bash
 aws cloudfront create-invalidation --distribution-id E1LZJ43CT5GFMD --paths "/*"
 ```
+
+### This is a simple change
+
+```bash
+ls -l /
+```
