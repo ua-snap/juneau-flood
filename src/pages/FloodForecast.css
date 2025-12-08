@@ -1,0 +1,453 @@
+/* Global Styles */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* Flood Tracker Container */
+.flood-tracker {
+  text-align: center;
+  max-width: 100%;
+}
+
+/* Titles & Headings */
+.flood-forecasting-title {
+  text-align: center !important;
+  font-size: 2.4rem;
+  color: #154f89;
+  font-weight: bold;
+  margin: 15px 0 -20px;
+}
+
+.flood-forecasting-subheading {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #0e2b4a;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 10px;
+}
+
+.flood-tracker h2 {
+  color: #0e2b4a;
+  font-size: 1.5rem;
+  margin: 10px 0 1px;
+}
+
+.flood-tracker h4 {
+  color: #000000;
+  font-size: 1.5rem;
+  margin: -10px 0 20px;
+}
+
+/* Section Titles */
+.flood-tracker .section-title,
+.flood-tracker .section-title-lake {
+  font-size: 1.4rem !important;
+  font-weight: bold;
+  color: #0e2b4a !important;
+  width: 100%;
+}
+
+.flood-tracker .section-title {
+  margin-top: -5px;
+  margin-bottom: -45px;
+}
+
+.flood-tracker .section-title-lake {
+  margin: -10px 0 10px !important;
+}
+
+/* Image Styles */
+.flood-image,
+.additional-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.mendenhall-lake-image {
+  width: 95%;
+  max-width: 1300px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.image-caption {
+  text-align: center;
+  font-size: 15px;
+  color: #0e2b4a;
+  font-weight: bold;
+  margin: 1px 0;
+}
+
+/* Content Layout */
+.flood-content,
+.lake-level-content {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1400px;
+}
+
+.flood-content {
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  margin: -30px auto;
+  padding: 20px;
+}
+
+.lake-level-content {
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.detail-card {
+  background-color: #f9fbfc;
+  border: 1px solid #dce7ef;
+  border-radius: 16px;
+  padding: 14px 10px;
+  margin: 10px auto 40px;
+  width: 95%;
+  max-width: 1340px;
+  text-align: left;
+  max-height: 400px;
+  overflow-y: auto;
+  font-size: 16.9px;
+}
+
+.flooding-info {
+  flex: 1;
+  max-width: 700px;
+  max-height: 525px;
+  overflow-y: auto;
+  min-width: 350px;
+  flex-direction: column;
+}
+
+.image-pair-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 !important;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.suicide-basin-wrapper,
+.additional-image-wrapper {
+  width: 100%;
+  max-width: 950px;
+  display: flex;
+}
+
+.additional-image {
+  width: 80%;
+  max-width: 900px;
+}
+
+.lake-level-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap !important;
+  gap: 40px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.lake-level-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 50px auto 0;
+  padding: 10px;
+}
+
+.hydrograph-container {
+  flex: 2;
+  text-align: center;
+}
+
+.hydrograph-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.floodstage-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.more-data-button {
+  display: block;
+  background-color: #00509e;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  margin: 15px auto;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease-in-out,
+    transform 0.2s;
+}
+
+.more-data-button:hover {
+  background-color: #9d0303;
+  transform: scale(1.05);
+}
+
+.flood-stage-container {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  margin: 20px auto 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.current-flood-stage-title,
+.flood-stage-text {
+  text-align: center;
+  margin-top: -1px !important;
+  margin-bottom: -10px !important;
+}
+
+.current-flood-stage-title {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.flood-stage-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.blue-square-tooltip {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  height: clamp(16.2px, 1.6%, 14px) !important;
+  background-color: blue;
+  border-radius: 2px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1268px) {
+  .flood-forecasting-title,
+  .flood-forecasting-subheading,
+  .flood-tracker h1,
+  .flood-tracker h2,
+  .flood-tracker h4 {
+    padding: 0 10px;
+    font-size: 1.8rem;
+  }
+
+  .flood-forecasting-title {
+    font-size: 2rem;
+    margin: 10px 0 -10px;
+  }
+
+  .flood-forecasting-subheading {
+    font-size: 1.1rem;
+    margin: 10px 0 0;
+  }
+
+  .section-title {
+    margin: 10px 0;
+  }
+
+  .lake-level-wrapper,
+  .lake-level-container,
+  .suicide-basin-container,
+  .image-pair-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lake-level-wrapper {
+    gap: 20px;
+  }
+
+  .image-pair-container {
+    gap: 5px !important;
+  }
+
+  .detail-card,
+  .flooding-info {
+    max-width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .detail-card p,
+  .flooding-info p {
+    font-size: 1.1rem;
+  }
+
+  .hydrograph-container,
+  .usgs-image,
+  .water-elevation-chart,
+  .image-container,
+  .flood-image,
+  .additional-image,
+  .suicide-basin-wrapper,
+  .additional-image-wrapper {
+    width: 100%;
+  }
+
+  .suicide-basin-container {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .suicide-basin-wrapper,
+  .additional-image-wrapper {
+    max-width: 750px;
+  }
+
+  .image-caption {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-marker {
+    display: none !important;
+  }
+
+  .section-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .flood-tracker h2,
+  .flood-tracker h4 {
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
+  }
+
+  .about-forecast-card p {
+    font-size: 0.95rem !important;
+    color: #000000;
+  }
+
+  .image-pair-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    margin-left: -40px;
+    max-width: 100%;
+    margin-top: -30px;
+  }
+
+  .image-container {
+    max-width: 100%;
+  }
+
+  .flood-image,
+  .additional-image {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .image-caption {
+    font-size: 14px;
+  }
+
+  .about-forecast-card {
+    padding: 10px !important;
+    width: 85%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .flood-tracker h2,
+  .flood-tracker h4,
+  .flood-forecasting-title,
+  .flood-forecasting-subheading {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .detail-card {
+    padding: 15px;
+  }
+
+  .lake-level-container,
+  .floodstage-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.about-forecast-card {
+  background-color: #f9fbfc;
+  border: 1px solid #dce7ef;
+  border-radius: 16px;
+  padding: 10px 20px;
+  text-align: center;
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 1320px;
+  margin: 20px auto;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 40px;
+}
+
+.about-forecast-card h3 {
+  font-size: 1.5rem;
+  color: #154f89;
+  margin-bottom: 10px;
+}
+
+.about-forecast-card p {
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+@media (max-width: 810px) {
+  .blue-square-tooltip {
+    top: 2.5% !important;
+    left: 50% !important;
+    width: 60% !important;
+    height: 10.7px !important;
+    background-color: #0d008d !important;
+    border-radius: 2px !important;
+  }
+}

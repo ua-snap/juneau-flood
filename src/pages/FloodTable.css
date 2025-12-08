@@ -1,0 +1,162 @@
+/* Flood Table Container */
+.flood-table-container {
+  width: 100%;
+  max-width: 100vw; /* Prevents table from overflowing */
+  margin-top: 20px;
+  overflow-x: hidden; /* Ensures no horizontal scrolling on large screens */
+  padding: 0 10px; /* Small padding to prevent touching screen edges */
+}
+
+.flood-table-title {
+  text-align: left;
+  font-size: 22px;
+  font-weight: bold;
+  padding-left: 40px;
+  margin-left: 30px;
+  margin-bottom: 1px;
+  color: rgb(0, 0, 0);
+}
+
+.flood-table-subtitle {
+  text-align: left;
+  font-size: 16px;
+  padding-left: 40px;
+  margin-left: 30px;
+  color: #154f89;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+/* Flood Table Styles */
+.flood-table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  width: 100%; /* Makes it fill the container */
+  min-width: 100%; /* Ensures table takes full width */
+  table-layout: auto; /* Allows dynamic column sizing */
+}
+
+/* Table Headers and Cells */
+.flood-table th,
+.flood-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  white-space: normal; /* Allows text wrapping to prevent overflow */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+/* Header Styling */
+.flood-table th {
+  background-color: #f4f4f4;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-right: 20px;
+}
+
+.flood-table th:hover {
+  background-color: #e0e0e0;
+}
+
+.flood-table th.sortable::after {
+  font-size: 12px;
+  color: gray;
+  margin-left: 5px;
+}
+
+.flood-table th.sortable:hover::after {
+  color: black;
+}
+
+.flood-table th.sortable:active {
+  background-color: #dcdcdc;
+}
+
+/* Ensure readability of colored cells */
+.flood-table td {
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Expand Button */
+.expand-button {
+  margin: 10px auto;
+  display: block;
+  padding: 8px 12px;
+  font-size: 16px;
+  background-color: #154f89;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+.expand-button:hover {
+  background-color: #123d6f;
+}
+
+/* Dimmed Effect for Preview Rows */
+.preview-row {
+  opacity: 0.2;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .flood-table th,
+  .flood-table td {
+    font-size: 12px; /* Reduce font size slightly on smaller screens */
+  }
+}
+
+/* Tablet Screens */
+@media (max-width: 900px) {
+  .flood-table-container {
+    overflow-x: auto; /* Enable scrolling if needed */
+  }
+
+  .flood-table {
+    font-size: 12px;
+    min-width: 100%;
+    table-layout: auto;
+  }
+
+  .flood-table th,
+  .flood-table td {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .expand-button {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+/* Mobile-Specific Styles */
+@media (max-width: 600px) {
+  .flood-table-container {
+    padding: 0; /* Remove padding on small screens */
+    overflow-x: auto; /* Ensure horizontal scrolling if needed */
+  }
+
+  .flood-table {
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .flood-table th,
+  .flood-table td {
+    padding: 6px;
+    font-size: 11px; /* Adjust text size for small screens */
+  }
+
+  .expand-button {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+}

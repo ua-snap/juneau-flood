@@ -1,0 +1,112 @@
+/* Overlay */
+.flood-popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Box */
+.flood-popup-box {
+  background: rgba(255, 255, 255, 0.867);
+  padding: 20px;
+  border-radius: 12px;
+  width: 70%;
+  max-width: 500px;
+  max-height: 80vh;
+  text-align: center;
+}
+
+/* Title & Text */
+.flood-popup-box h2 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 800;
+  color: #0244a7;
+}
+
+.flood-popup-box p {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.flood-popup-box p strong {
+  font-weight: 900;
+}
+
+/* Button */
+.popup-close-button {
+  background-color: #0056d6;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+.popup-close-button:hover,
+.popup-close-button:focus {
+  background-color: #9a0000;
+}
+
+.popup-close-button:active {
+  transform: translateY(1px);
+}
+
+/* Main evacuation message */
+.flood-popup-box .evacuation-text {
+  font-size: 19px; /* or whatever size you prefer */
+  font-weight: 500;
+}
+
+/* Source line */
+.flood-popup-box .evacuation-source {
+  font-size: 16px;
+  font-style: italic; /* optional for style */
+  color: #2f2e2e; /* optional for lighter tone */
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .flood-popup-box {
+    width: 80%;
+    padding: 16px;
+  }
+
+  .flood-popup-box h2 {
+    font-size: 20px;
+  }
+
+  .popup-close-button {
+    font-size: 15px;
+    padding: 10px 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .flood-popup-box {
+    width: 90%;
+    padding: 14px;
+  }
+
+  .flood-popup-box h2 {
+    font-size: 20px !important;
+  }
+
+  .flood-popup-box p {
+    font-size: 18px !important;
+  }
+
+  .popup-close-button {
+    width: 40%;
+    font-size: 14px;
+    padding: 16px 0;
+  }
+}

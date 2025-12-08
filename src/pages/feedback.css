@@ -1,0 +1,129 @@
+/* === FEEDBACK PAGE LAYOUT === */
+.feedback-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: #222;
+}
+
+/* === HEADER TITLES === */
+.flood-feedback-container {
+  text-align: center;
+}
+
+.flood-feedback-title {
+  text-align: center !important;
+  margin: 10px 0 -10px;
+  font-size: 2.4rem;
+  color: #154f89;
+}
+
+.flood-feedback-subheading {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #0e2b4a;
+  margin: 0 0 20px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* === ABOUT FLOODS CARD === */
+.about-feedback-card {
+  background-color: #f9fbfc;
+  border: 1px solid #dce7ef;
+  border-radius: 16px;
+  padding: 24px 28px;
+  text-align: left;
+  line-height: 1.7;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-feedback-card p {
+  font-size: 1rem;
+  color: #000000;
+}
+
+.about-feedback-card strong {
+  color: #003366;
+  font-weight: 800;
+  margin-bottom: -15px;
+}
+
+.about-feedback-card em {
+  color: #000000;
+  font-style: italic;
+}
+
+.about-feedback-card a {
+  color: #0078d7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.about-feedback-card a:hover {
+  text-decoration: underline;
+}
+
+.about-feedback-card br + strong {
+  display: block;
+  margin-top: 16px;
+}
+
+/* === FEEDBACK FORM === */
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.feedback-container iframe {
+  border: none;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* === BACK LINK (if used) === */
+.back-link {
+  margin-top: 20px;
+}
+
+.back-link a {
+  text-decoration: none;
+  color: #0078d7;
+  font-weight: bold;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .flood-feedback-title {
+    font-size: 1.6rem;
+  }
+
+  .about-floods-card {
+    padding: 20px;
+  }
+
+  .about-floods-card p {
+    font-size: 0.95rem;
+  }
+  .flood-feedback-subheading {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #0e2b4a;
+    margin: 0 0 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    font-family: "Open Sans", sans-serif;
+  }
+}

@@ -1,0 +1,150 @@
+.stepper-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  background-color: rgba(63, 62, 62, 0) !important;
+  padding: 4px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 297px;
+  margin: -1px;
+  margin-top: -4px;
+  margin-left: -4px;
+  position: relative;
+}
+
+.stepper-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 26px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  max-width: 50px;
+  min-height: 50px;
+  flex: 1;
+}
+
+.stepper-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.stepper-button:hover:not(:disabled) {
+  background-color: #007bffbe;
+}
+
+.flood-level-card {
+  padding: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  flex: 2;
+  text-align: center;
+}
+
+.flood-level-card:hover {
+  opacity: 0.8;
+}
+
+.flood-level-card.dimmed {
+  opacity: 0.5;
+}
+
+.lake-level-header {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 4px;
+  color: #004488;
+}
+
+@media screen and (max-width: 480px) {
+  .stepper-container {
+    max-width: 180px;
+    gap: 5px;
+    margin-bottom: -7px;
+  }
+
+  .stepper-button {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .flood-level-card {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .stepper-container {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    width: 60vw;
+    max-width: 600px;
+    transform: translateX(-50%) !important;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+
+  .stepper-button {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+  }
+
+  .flood-level-card {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 851px) {
+  .stepper-container {
+    position: fixed;
+    bottom: 1px !important;
+    left: 50%;
+    width: 70vw;
+    max-width: 400px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 16px;
+    border-radius: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .stepper-container {
+    bottom: 1px !important;
+    width: 70vw;
+    max-width: 400px;
+  }
+}
+
+.water-text {
+  font-weight: normal;
+  font-size: 1rem;
+  margin-bottom: -8px;
+}
+
+.water-text-sub {
+  font-weight: normal;
+  font-size: 1rem;
+  margin-bottom: -6px;
+}

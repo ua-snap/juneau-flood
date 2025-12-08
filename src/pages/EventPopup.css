@@ -1,0 +1,220 @@
+/* === Overlay === */
+.event-popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* === Popup Box === */
+.event-popup-box {
+  position: relative; /* ✅ makes the close button anchor to this box */
+  background: rgba(255, 255, 255, 0.94);
+  padding: 22px 26px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 500px;
+  max-height: 80vh;
+  text-align: center;
+  border-left: 6px solid #00509e;
+  border-right: 6px solid #00509e;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  font-family: "Open Sans", sans-serif;
+  animation: slideUp 0.4s ease-in-out;
+}
+
+/* === Title & Text === */
+.event-popup-box h2 {
+  margin: 0 0 10px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #154f89;
+}
+
+.event-popup-box p {
+  margin: 0 0 18px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.5;
+  margin-bottom: 30px !important;
+}
+
+.event-popup-box p strong {
+  font-weight: 700;
+  color: #0e2b4a;
+}
+
+/* === Button === */
+.popup-close-button {
+  background-color: #00509e;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition:
+    background-color 0.25s ease,
+    transform 0.1s ease;
+}
+
+.popup-close-button:hover,
+.popup-close-button:focus {
+  background-color: #0a63c7;
+  transform: translateY(-1px);
+}
+
+.popup-close-button:active {
+  transform: translateY(1px);
+}
+
+/* === Text Variants === */
+.event-popup-box .evacuation-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.event-popup-box .evacuation-source {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #2f2e2e;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 1000px) {
+  .event-popup-box {
+    width: 80%;
+    padding: 18px;
+  }
+
+  .event-popup-box h2 {
+    font-size: 1.4rem;
+  }
+
+  .event-popup-box p {
+    font-size: 1rem;
+  }
+
+  .event-close-button {
+    font-size: 15px;
+    padding: 10px 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .event-popup-box {
+    width: 90%;
+    padding: 14px;
+  }
+
+  .event-popup-box h2 {
+    font-size: 1.3rem !important;
+  }
+
+  .event-popup-box p {
+    font-size: 0.95rem !important;
+  }
+
+  .popup-close-button {
+    width: 70%;
+    font-size: 0.95rem;
+    padding: 12px 0;
+  }
+}
+
+/* === Feedback Page Button === */
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.home-button {
+  display: inline-block;
+  background-color: #00509e;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  width: 190px;
+  transition:
+    background-color 0.3s ease-in-out,
+    transform 0.2s;
+  text-decoration: none;
+  align-items: center;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.home-button:hover {
+  background-color: #9d0303;
+  transform: scale(1.05);
+}
+
+/* === Close Button (Top Right) === */
+
+.popup-close-x {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: #154f89;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  transition:
+    color 0.25s ease,
+    transform 0.2s ease;
+  z-index: 10;
+}
+
+.popup-close-x:hover {
+  color: #9d0303; /* matches hover accent tone */
+  transform: scale(1.15);
+}
+
+.popup-close-x:focus {
+  outline: 2px solid #00509e;
+  border-radius: 4px;
+}
+
+/* Optional: slightly smaller on mobile */
+@media (max-width: 600px) {
+  .popup-close-x {
+    top: 8px;
+    right: 10px;
+    font-size: 1.5rem;
+  }
+}
