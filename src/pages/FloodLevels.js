@@ -261,7 +261,7 @@ const FloodLevels = () => {
   };
 
   useEffect(() => {
-    mapboxgl.accessToken = "pk.eyJ1IjoibWFwZmVhbjIiLCJhIjoiY21pcWswemY0MG80cTNncHEyZ21zYmEyZiJ9.nbKjrNEB-elGg4qUyDXY0Q";
+    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN; 
 
     if (!mapRef.current) {
       mapRef.current = new mapboxgl.Map({
