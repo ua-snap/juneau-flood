@@ -78,10 +78,10 @@ const FloodKey = () => {
         rel="noopener noreferrer"
         className="flood-records-title"
       >
-        Flood Events
+        Events
         <span className="flood-events-tooltip">
           Recorded glacial lake outbust floods by NWS. Years indicate the
-          highest ever recorded lake levels.
+          highest recorded lake levels.
         </span>
       </a>
 
@@ -112,15 +112,14 @@ const FloodKey = () => {
                   <span className="flood-unit">ft</span>
                 </span>
                 <span className="flood-label hover-label">
-                  <strong>{level}</strong>
-                  <span className="flood-unit">ft</span>
+                  
                   <span className="flood-count">
-                    &nbsp;-&nbsp;Events: {eventCount}
+                  Events: {eventCount}
                   </span>
                 </span>
               </div>
 
-              {/* Dynamic positioned record marker */}
+
               {record && (
                 <div
                   className="record-marker"

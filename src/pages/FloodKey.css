@@ -23,7 +23,7 @@
 }
 
 .flood-records-container.expanded {
-  width: 163px;
+  width: 140px;
 }
 
 .flood-records-title {
@@ -31,8 +31,8 @@
   background: none;
   border: none;
   color: #fff;
-  padding: 6px 7px;
-  font-size: 0.96rem;
+  padding: 4px 7px;
+  font-size: 0.9rem;
   border-radius: 6px;
   line-height: 1rem;
   font-weight: bold !important;
@@ -84,11 +84,12 @@
 .flood-records-title:hover .flood-events-tooltip {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(3px);
+  transform: translateX(-55%) translateY(3px);
 }
 
 .flood-records-container:hover .flood-records-title {
   background: rgba(35, 123, 207, 0.8);
+  margin-left: 11px;
 }
 
 .flood-records-container:hover .flood-records-title:hover {
@@ -127,7 +128,7 @@
 }
 
 .flood-records-container.expanded .flood-pill {
-  width: 110px;
+  width: 80px;
 }
 
 .flood-pill:hover {
