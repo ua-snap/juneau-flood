@@ -36,7 +36,7 @@ a:focus {
   background: rgba(35, 123, 207, 0.8);
   border: none;
   color: white;
-  padding: 6px 10px;
+  padding: 3px 8px;
   font-size: 0.85rem;
   border-radius: 6px;
   cursor: pointer;
