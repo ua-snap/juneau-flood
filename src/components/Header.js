@@ -6,13 +6,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-image">
-        <a href="https://akcasc.org/" target="_blank" rel="noopener noreferrer">
-          <img
-            src="/ACASC2.png"
-            alt="Alaska Climate Adaptation Science Center Logo"
-            className="logo"
-          />
-        </a>
+
         <a
           href="https://uas.alaska.edu/"
           target="_blank"
@@ -28,6 +22,13 @@ const Header = () => {
           <img
             src="/NSF.png"
             alt="National Science Foundation Logo"
+            className="logo"
+          />
+        </a>
+                <a href="https://akcasc.org/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="/ACASC2.png"
+            alt="Alaska Climate Adaptation Science Center Logo"
             className="logo"
           />
         </a>

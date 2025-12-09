@@ -1,6 +1,6 @@
 .search-bar-container {
   position: absolute;
-  top: 116px;
+  top: 103px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;

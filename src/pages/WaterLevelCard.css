@@ -1,0 +1,38 @@
+.level-card {
+  position: relative;
+  margin: -10px 0 5px -1px !important;
+  padding: 1.5px !important;
+  width: 297px;
+  color: white;
+  z-index: 10;
+  background: rgba(85, 84, 84, 0.449);
+  backdrop-filter: blur(3px);
+  border-radius: 8px;
+  margin-top: -15px !important;
+}
+
+.level-card:hover {
+  background: rgba(85, 98, 114, 0.7);
+}
+
+.level-card p {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 11px;
+}
+
+@media (max-width: 851px) {
+  .level-card {
+    display: none !important;
+  }
+}
+
+@media (min-width: 851px) {
+  .level-card {
+    display: block !important;
+  }
+}

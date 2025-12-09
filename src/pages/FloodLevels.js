@@ -4,11 +4,14 @@ import "./FloodLevels.css";
 import FloodStageMenu from "./FloodStageMenu";
 import FloodStepper from "./FloodStepper";
 import FloodInfoPopup from "./FloodInfoPopup";
-import { getFloodStage } from "./utils/floodStages";
 import Search from "./Search.js";
 import FloodRecordsBar from "./FloodKey.js";
 import FloodCardMobile from "./FloodCardMobile";
 import AboutMap from "./AboutMap";
+import WaterLevelCard from "./WaterLevelCard";
+import LakeGages from "./LakeGages";
+
+//test
 
 export const parcelTileset = {
   url: "mapbox://mapfean.74ijmvrj",
@@ -45,8 +48,8 @@ const FloodLevels = () => {
   const popupRef = useRef(null);
   const hoverHandlersRef = useRef({ move: null, out: null });
   const [mapReady, setMapReady] = useState(false);
-  const [gageMarkers, setGageMarkers] = useState([]);
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
+  const lakeGagesRef = useRef();
+
 
   const setupHoverPopup = useCallback((activeLayerId) => {
     const map = mapRef.current;
@@ -162,6 +165,7 @@ const FloodLevels = () => {
 
   const tilesetMap = {
     base: {
+      // 8ft to 19ft
       64: "ccav82q0",
       65: "3z7whbfp",
       66: "8kk8etzn",
@@ -174,6 +178,7 @@ const FloodLevels = () => {
       73: "65em8or7",
       74: "9qrkn8pk",
       75: "3ktp8nyu",
+      // 20ft
       76: "avpruavl",
     },
     hesco: {
@@ -259,14 +264,14 @@ const FloodLevels = () => {
   };
 
   useEffect(() => {
-    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN; 
 
     if (!mapRef.current) {
       mapRef.current = new mapboxgl.Map({
         container: mapContainerRef.current,
         style: "mapbox://styles/mapbox/satellite-streets-v12",
-        center: [-134.572823, 58.397411],
-        zoom: 11,
+        center: [-134.54005, 58.380001],
+        zoom: 11.2,
       });
 
       mapRef.current.on("load", () => {
@@ -316,36 +321,6 @@ const FloodLevels = () => {
           filter: ["==", "tax_id", ""],
         });
 
-        const markerCoordinates = [
-          {
-            id: "15052500",
-            lat: 58.4293972,
-            lng: -134.5745592,
-            name: "USGS Mendenhall Lake Level Gage",
-            link: "https://waterdata.usgs.gov/monitoring-location/15052500/",
-          },
-          {
-            id: "1505248590",
-            lat: 58.4595556,
-            lng: -134.5038333,
-            name: "USGS Suicide Basin Level Gage",
-            link: "https://waterdata.usgs.gov/monitoring-location/1505248590/",
-          },
-        ];
-
-        const markers = markerCoordinates.map((coord) => {
-          const el = document.createElement("div");
-          el.className = "usgs-marker";
-          const marker = new mapboxgl.Marker(el)
-            .setLngLat([coord.lng, coord.lat])
-            .addTo(mapRef.current);
-          const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-            `<b>${coord.name}</b><br/>Loading…`,
-          );
-          marker.setPopup(popup);
-          return { ...coord, marker, popup };
-        });
-        setGageMarkers(markers);
 
         setMapReady(true);
       });
@@ -423,32 +398,6 @@ const FloodLevels = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (!mapReady || gageMarkers.length === 0 || waterLevels.length === 0)
-      return;
-
-    gageMarkers.forEach(({ id, popup }) => {
-      const level = waterLevels.find((l) => l.id === id);
-      if (level) {
-        popup.setHTML(`
-        <a href="https://waterdata.usgs.gov/monitoring-location/${id}/" target="_blank" rel="noopener noreferrer">  
-          <b>${level.name}</b><br/>      </a>
-          Current Level: <strong>${level.value} ft</strong><br/>
-          <small>${level.dateTime}</small>
-          
-
-      `);
-      } else {
-        popup.setHTML(`
-        <div style="top: 15px;">
-        <a href="https://waterdata.usgs.gov/monitoring-location/${id}/" target="_blank" rel="noopener noreferrer">
-          <b>USGS Suicide Basin Gage</b><br/>        </a>
-          Current Level: <strong>OFFLINE</strong><br/>
-
-      `);
-      }
-    });
-  }, [mapReady, gageMarkers, waterLevels]);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -465,6 +414,14 @@ const FloodLevels = () => {
         ref={mapContainerRef}
         style={{ height: "110vh", width: "110vw" }}
       />
+
+      <LakeGages
+  ref={lakeGagesRef}
+  mapRef={mapRef}
+  setWaterLevels={setWaterLevels}
+/>
+
+
 
       <div className="flood-stepper-container">
         <FloodStepper
@@ -528,35 +485,17 @@ const FloodLevels = () => {
               setupHoverPopup(`flood${64 + (selectedFloodLevel - 8)}-fill`)
             }
           />
-          <div style={{ marginTop: "20px" }}>
-            {waterLevels.map((level) => {
-              const currentStage = getFloodStage(level.value);
-              return (
-                <div key={level.id} className="level-card">
-                  <p>
-                    <a style={{ color: "white" }}>Lake Level:</a>
-                    <strong>{` ${level.value} ft`}</strong>
-                  </p>
-                  <p>
-                    <span style={{ color: "white" }}>
-                      <span
-                        style={{
-                          fontSize: "1.2rem",
-                          fontWeight: "bold",
-                          lineHeight: "1px",
-                        }}
-                      >
-                        {currentStage?.label || "OFFLINE"}
-                      </span>
-                    </span>
-                  </p>
-                  <p style={{ fontSize: "0.66rem", lineHeight: "2px" }}>
-                    {level.dateTime || "N/A"}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+<div style={{ marginTop: "20px" }}>
+  {waterLevels.map((level) => (
+    <WaterLevelCard
+  key={level.id}
+  level={level}
+  onHover={() => lakeGagesRef.current?.showPopupForGage("15052500")}
+  onLeave={() => lakeGagesRef.current?.hidePopupForGage("15052500")}
+/>
+  ))}
+</div>
+
           <AboutMap />
         </div>
       )}

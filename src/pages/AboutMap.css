@@ -13,7 +13,8 @@
 }
 .flood-records-container2.expanded {
   width: 290px;
-  max-height: 350px;
+  max-height: var(--remaining-height, 500px) !important;
+  overflow-y: auto;
   border: 0.9px solid white;
   background-color: #697e6d9e !important;
 }
@@ -51,7 +52,6 @@
   font-weight: bolder;
   margin-bottom: 8px;
   margin-top: -18px;
-  max-height: 100px !important;
   overflow-y: auto;
   padding-right: 8px;
 }
