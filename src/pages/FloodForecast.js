@@ -31,14 +31,14 @@ const FloodPrediction = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Handles clicking on visual tooltip markers
+
   const handleMarkerClick = (marker, event, imageId) => {
     const wrapperRect = event.target
       .closest(".image-wrapper")
       .getBoundingClientRect();
     const markerRect = event.target.getBoundingClientRect();
 
-    // Toggle visibility if clicking the same marker
+ 
     if (
       activeInfo &&
       activeInfo.imageId === imageId &&
@@ -55,14 +55,14 @@ const FloodPrediction = () => {
     }
   };
 
-  // Closes tooltip info box if clicked outside
+
   const closeInfoBox = (e) => {
     if (!e.target.closest(".info-box") && !e.target.closest(".info-marker")) {
       setActiveInfo(null);
     }
   };
 
-  // Tooltip marker positions for Suicide Basin and Mendenhall
+
   const markers = {
     suicideBasin: [
       { top: "55%", left: "19.5%", text: "Current glacial lake water levels" },
@@ -75,7 +75,7 @@ const FloodPrediction = () => {
     mendenhallLake: [],
   };
 
-  // Fetch real-time Mendenhall Lake water levels from USGS
+
   const fetchWaterLevels = async () => {
     const gageId = "15052500";
     const apiUrl = `https://waterservices.usgs.gov/nwis/iv/?format=json&sites=${gageId}&parameterCd=00065&siteStatus=active`;
@@ -103,14 +103,14 @@ const FloodPrediction = () => {
     }
   };
 
-  // Poll for lake level every 60s
+
   useEffect(() => {
     fetchWaterLevels();
-    const interval = setInterval(fetchWaterLevels, 60000); // Update every 60 seconds
+    const interval = setInterval(fetchWaterLevels, 60000); 
     return () => clearInterval(interval);
   }, []);
 
-  // Translate water level into descriptive stage
+
   const getFloodStage = (level) => {
     if (level === null) return "Loading...";
     if (level < 0) return "No Water Level Data Available";
@@ -123,17 +123,17 @@ const FloodPrediction = () => {
     return `Major Flood Stage at ${level.toFixed(1)} ft`;
   };
 
-  // ------------------- COMPONENT UI -------------------
+
 
   return (
     <div className="flood-tracker" onClick={closeInfoBox}>
-      {/* Title & Subheading */}
+
       <h1 className="flood-forecasting-title">Explore Flood Forecasting</h1>
       <h3 className="flood-forecasting-subheading">
         Understanding Water Levels in Suicide Basin & Mendenhall Lake
       </h3>
 
-      {/* Suicide Basin Section */}
+
       <div className="about-forecast-card">
         <p>
           This page provides information about real-time monitoring efforts. The
@@ -149,13 +149,13 @@ const FloodPrediction = () => {
         </p>
       </div>
 
-      {/* Image Section */}
+
 
       <div className="flood-content">
-        {/* Suicide Basin Section */}
+
         <h2 className="section-title">Suicide Basin Water Level</h2>
         <div className="image-pair-container">
-          {/* Suicide Basin Image */}
+
           <div className="image-container suicide-basin-container">
             {loading ? (
               <p>Loading image...</p>
@@ -181,7 +181,6 @@ const FloodPrediction = () => {
             )}
           </div>
 
-          {/* NOAA Hydrograph for Suicide Basin */}
           <div className="image-container additional-image-container">
             <div className="image-wrapper additional-image-wrapper">
               <img
@@ -200,7 +199,7 @@ const FloodPrediction = () => {
         </div>
       </div>
 
-      {/* Education Section - GLOF Forecasting */}
+
       <div className="detail-card black-text">
         <h2>Forecasting Glacial Lake Outburst Floods (GLOFs)</h2>
         <p>
@@ -256,13 +255,13 @@ const FloodPrediction = () => {
         </button>
       </div>
 
-      {/* Mendenhall Lake Level Section */}
+  
 
       <div className="lake-level-content">
         <h2 className="section-title-lake">Mendenhall Lake Level</h2>
-        {/* Flex container for Hydrograph & Text */}
+  
         <div className="lake-level-wrapper">
-          {/* NOAA Hydrograph */}
+
           <div className="image-wrapper">
             {loading ? (
               <p>Loading graph...</p>
@@ -283,7 +282,7 @@ const FloodPrediction = () => {
                   activeInfo={activeInfo}
                   imageId="mendenhallLake"
                 />
-                {/* ADD BLUE SQUARE TOOLTIP */}
+
                 <div
                   className="blue-square-tooltip"
                   style={{
@@ -350,7 +349,7 @@ const FloodPrediction = () => {
       </div>
 
       <div className="flood-stage-container">
-        {/* Dynamic Flood Stage Display */}
+
         <div className="flood-stage-container">
           <FloodStageBar />
           <h2 className="current-flood-stage-title">

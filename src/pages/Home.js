@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "./SuicideBasin.css";
 
-// cd /Users/seanfagan/Desktop/juneau-flood-alpha
+// cd /Users/seanfagan/Desktop/juneau-flood-main
 // https://juneauflood-basin-images.s3.us-west-2.amazonaws.com/flood-impacts/
 
 const images = [

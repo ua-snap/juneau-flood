@@ -1,12 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./AboutMap.css";
 import Model from "./Model";
 
 const AboutMap = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    function adjustHeight() {
+      if (!containerRef.current || !isHovered) return;
+
+      const rect = containerRef.current.getBoundingClientRect();
+      const remaining = window.innerHeight - rect.top - 10;
+
+      containerRef.current.style.setProperty(
+        "--remaining-height",
+        `${remaining}px`
+      );
+    }
+
+    adjustHeight(); 
+
+    window.addEventListener("resize", adjustHeight);
+    return () => window.removeEventListener("resize", adjustHeight);
+  }, [isHovered]); 
 
   return (
     <div
+      ref={containerRef}
       className={`flood-records-container2 ${isHovered ? "expanded" : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -21,9 +42,10 @@ const AboutMap = () => {
             Flood inundation maps show potential impacts between 8ft - 20ft.
             Impacts at 8ft are limited to low-lying areas near the river and
             shoreline, while impacts at 20ft show widespread flooding throughout
-            Juneau. <p></p>These maps are based on a combination of historical
-            flood data, topographical analysis, and hydrological modeling to
-            provide a comprehensive view of potential flood scenarios.
+            Juneau.
+            <p />
+            These maps are based on historical flood data, topographical
+            analysis, and hydrological modeling to show potential scenarios.
           </div>
         </div>
       )}

@@ -4,7 +4,7 @@ import "./SearchDesktop.css";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
-// Juneau bounding box (~20mi radius)
+
 const bbox = "-135.147043,58.097567,-134.027043,58.677567";
 const proximity = "-134.587043,58.387567";
 
@@ -18,14 +18,13 @@ const Search = ({ mapRef }) => {
   const searchMarkerRef = useRef(null);
   const userMarkerRef = useRef(null);
 
-  /* Detect mobile / desktop */
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 800);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  /* Fetch autocomplete suggestions */
+
   const fetchSuggestions = async (query) => {
     if (!query) return setSuggestions([]);
     try {
@@ -43,7 +42,7 @@ const Search = ({ mapRef }) => {
     }
   };
 
-  /* Handle suggestion click */
+
   const handleSuggestionSelect = (feature) => {
     const [lng, lat] = feature.geometry.coordinates;
 
@@ -57,7 +56,7 @@ const Search = ({ mapRef }) => {
     setSuggestions([]);
   };
 
-  /* Manual search */
+
   const searchAddress = async () => {
     if (!address.trim()) return;
     setIsSearching(true);
@@ -91,7 +90,7 @@ const Search = ({ mapRef }) => {
     }
   };
 
-  /* Locate user */
+
   const handleLocate = () => {
     if (!navigator.geolocation) {
       alert("Geolocation is not supported by your browser");
