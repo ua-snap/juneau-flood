@@ -1,4 +1,4 @@
-/* Global Styles */
+
 html,
 body {
   max-width: 100%;
@@ -15,16 +15,14 @@ body {
   line-height: 1.6;
 }
 
-/* Flood Tracker Container */
 .flood-tracker {
   text-align: center;
   max-width: 100%;
 }
 
-/* Titles & Headings */
 .flood-forecasting-title {
   text-align: center !important;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   color: #154f89;
   font-weight: bold;
   margin: 15px 0 -20px;
@@ -32,7 +30,7 @@ body {
 
 .flood-forecasting-subheading {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #0e2b4a;
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
@@ -51,7 +49,6 @@ body {
   margin: -10px 0 20px;
 }
 
-/* Section Titles */
 .flood-tracker .section-title,
 .flood-tracker .section-title-lake {
   font-size: 1.4rem !important;
@@ -61,15 +58,14 @@ body {
 }
 
 .flood-tracker .section-title {
-  margin-top: -5px;
-  margin-bottom: -45px;
+  margin-top: 5px;
+  margin-bottom: -60px;
 }
 
 .flood-tracker .section-title-lake {
   margin: -10px 0 10px !important;
 }
 
-/* Image Styles */
 .flood-image,
 .additional-image {
   width: 100%;
@@ -92,7 +88,6 @@ body {
   margin: 1px 0;
 }
 
-/* Content Layout */
 .flood-content,
 .lake-level-content {
   display: flex;
@@ -420,9 +415,9 @@ body {
   background-color: #f9fbfc;
   border: 1px solid #dce7ef;
   border-radius: 16px;
-  padding: 10px 20px;
+  padding: 5px 15px;
   text-align: center;
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0 auto;
   max-width: 1320px;
   margin: 20px auto;
@@ -437,7 +432,7 @@ body {
 }
 
 .about-forecast-card p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #000000;
 }
 

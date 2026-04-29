@@ -8,7 +8,6 @@ import CompareImage from "react-compare-image";
 const S3_CSV_URL =
   "https://juneauflood-basin-images.s3.us-west-2.amazonaws.com/FloodEvents.csv";
 
-// Rename specific CSV headers for clarity and UI display
 const COLUMN_NAME_MAPPING = {
   "Release Stage D.S. Gage (ft)": "Release Start Stage at Mendenhall Lake (ft)",
   "D.S. Gage Release Flow (cfs)": "Release Flow Rate at Mendenhall Lake (cfs)",
@@ -43,7 +42,6 @@ const FloodEvents = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [showTooltip, setShowTooltip] = useState(false);
 
-    // Detect numeric targets
     const isNumeric = typeof target === "number" && !isNaN(target);
 
     useEffect(() => {
@@ -118,13 +116,11 @@ const FloodEvents = () => {
           complete: (result) => {
             setLoading(false);
 
-            // Filter & rename headers
             const filteredHeaders = result.meta.fields
               .filter((header) => !EXCLUDED_COLUMNS.includes(header))
               .map((header) => COLUMN_NAME_MAPPING[header] || header);
             setHeaders(filteredHeaders);
 
-            // Clean and remap data
             const filteredData = result.data.map((row) => {
               const filteredRow = {};
               Object.keys(row).forEach((key) => {
@@ -138,14 +134,14 @@ const FloodEvents = () => {
 
             setData(filteredData);
 
-            // === STATS ===
+
             setTotalEvents(filteredData.length);
 
             if (filteredData.length > 0) {
-              // Latest flood (assumes newest first)
+
               setLatestFloodEvent(filteredData[0]);
 
-              // Largest flood event
+
               const largest = filteredData.reduce((max, row) => {
                 const currentPeak = parseFloat(
                   row["Peak Water Level at Mendenhall Lake (ft)"],
@@ -160,7 +156,7 @@ const FloodEvents = () => {
               setLargestFloodEvent(largest);
             }
 
-            // Scatter graph data
+
             const scatterPoints = filteredData
               .filter(
                 (row) =>
@@ -182,10 +178,10 @@ const FloodEvents = () => {
       });
   }, []);
 
-  // === UI ===
+
   return (
     <div className="about-container">
-      {/* === Stats Bar === */}
+
       <div className="stats-bar">
         <div className="stats-overlay">
           <Stat
@@ -193,14 +189,14 @@ const FloodEvents = () => {
             label="First Flood Event Recorded"
             tooltip="First documented flood event at Suicide Basin from NWS above 8ft (Minor Flood Stage)."
           />
-          {/* Stat 1: Total Flood Events */}
+
           <Stat
             target={totalEvents}
             label="Total Flood Events Recorded"
             tooltip="Documented flood events from NWS above 8ft (Minor Flood Stage)."
           />
 
-          {/* Stat 2: Largest Flood Event */}
+
           {largestFloodEvent && (
             <Stat
               target={parseFloat(
@@ -211,7 +207,7 @@ const FloodEvents = () => {
             />
           )}
 
-          {/* Stat 3: Most Recent Flood Event */}
+
           {latestFloodEvent && (
             <Stat
               target={latestFloodEvent["Peak Water Level Date"]}
@@ -222,7 +218,7 @@ const FloodEvents = () => {
         </div>
       </div>
 
-      {/* === Main Flood Data === */}
+
       <div className="flood-events-container">
         <h2 className="flood-events-title">Mendenhall Valley Flood Records</h2>
         <h2 className="flood-events-subheading">
@@ -239,18 +235,18 @@ const FloodEvents = () => {
           </p>
         </div>
 
-        {/* === Table + Graph === */}
+
         <div className="visuals-container">
           <FloodTable headers={headers} data={data} loading={loading} />
           <FloodGraph scatterData={scatterData} />
         </div>
 
-        {/* Image Comparison Section */}
-        <h3 className="flood-table-title">
+
+        <h3 className="SB-title">
           {" "}
           Suicide Basin: The Source of Flood Events{" "}
         </h3>
-        <h4 className="flood-table-subtitle">
+        <h4 className="SB-subtitle">
           Slide to see the Mendenhall Glacier and Suicide Basin from 1893 - 2018
         </h4>
         <div className="image-comparison-container">

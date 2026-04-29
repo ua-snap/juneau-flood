@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Papa from "papaparse"; // CSV parser
-import "./FloodTable.css"; // Import styles
+import Papa from "papaparse";
+import "./FloodTable.css";
 
 const S3_CSV_URL =
   "https://juneauflood-basin-images.s3.us-west-2.amazonaws.com/FloodEvents.csv";
@@ -30,7 +30,6 @@ const getFloodStageColor = (stage) => {
 };
 
 const FloodTable = () => {
-  const [, setData] = useState([]);
   const [headers, setHeaders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [sortedData, setSortedData] = useState([]);
@@ -42,7 +41,7 @@ const FloodTable = () => {
 
   useEffect(() => {
     fetch(S3_CSV_URL)
-      .then((response) => response.text())
+      .then((res) => res.text())
       .then((csvText) => {
         Papa.parse(csvText, {
           header: true,
@@ -50,7 +49,6 @@ const FloodTable = () => {
           complete: (result) => {
             const rawData = result.data;
 
-            // Process data and add index column
             const processedData = rawData.map((row, index) => {
               const newRow = { Index: index + 1 };
               Object.keys(row).forEach((key) => {
@@ -64,12 +62,9 @@ const FloodTable = () => {
 
             const newHeaders = [
               "Index",
-              ...Object.keys(processedData[0] || {}).filter(
-                (h) => h !== "Index",
-              ),
+              ...Object.keys(processedData[0] || {}).filter((h) => h !== "Index"),
             ];
 
-            setData(processedData);
             setSortedData(processedData);
             setHeaders(newHeaders);
             setLoading(false);
@@ -88,22 +83,19 @@ const FloodTable = () => {
         ? "desc"
         : "asc";
 
-    const isDateColumn = (value) => {
-      return /^\d{4}-\d{2}-\d{2}$/.test(value) || !isNaN(Date.parse(value));
-    };
+    const isDateColumn = (value) =>
+      /^\d{4}-\d{2}-\d{2}$/.test(value) || !isNaN(Date.parse(value));
 
     const sorted = [...sortedData].sort((a, b) => {
       const aRaw = a[column];
       const bRaw = b[column];
 
-      // Check for date comparison
       if (isDateColumn(aRaw) && isDateColumn(bRaw)) {
         const aDate = new Date(aRaw);
         const bDate = new Date(bRaw);
         return direction === "asc" ? aDate - bDate : bDate - aDate;
       }
 
-      // Check for numeric comparison
       const aValue = parseFloat(aRaw);
       const bValue = parseFloat(bRaw);
 
@@ -111,7 +103,6 @@ const FloodTable = () => {
         return direction === "asc" ? aValue - bValue : bValue - aValue;
       }
 
-      // Default to string comparison
       return direction === "asc"
         ? String(aRaw).localeCompare(String(bRaw))
         : String(bRaw).localeCompare(String(aRaw));
@@ -128,85 +119,89 @@ const FloodTable = () => {
       ) : (
         <>
           <h3 className="flood-table-title">
-            Mendenhall Glacial Lake Outburst Flood Events Table
+            Glacial Lake Outburst Flood Events Table
           </h3>
           <h4 className="flood-table-subtitle">
             Select Columns To Explore Flood Data
           </h4>
 
-          <table className="flood-table">
-            <thead>
-              <tr>
-                {headers.map((header, index) => (
-                  <th
-                    key={index}
-                    className="sortable"
-                    onClick={() => handleSort(header)}
-                  >
-                    {header}{" "}
-                    {sortConfig.key === header
-                      ? sortConfig.direction === "asc"
-                        ? "▲"
-                        : "▼"
-                      : ""}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {sortedData.length === 0 ? (
+          <div className="flood-table-scroll">
+            <table className="flood-table">
+              <thead>
                 <tr>
-                  <td colSpan={headers.length} className="no-data">
-                    No data available
-                  </td>
+                  {headers.map((header, index) => (
+                    <th
+                      key={index}
+                      className="sortable"
+                      onClick={() => handleSort(header)}
+                    >
+                      {header}{" "}
+                      {sortConfig.key === header
+                        ? sortConfig.direction === "asc"
+                          ? "▲"
+                          : "▼"
+                        : ""}
+                    </th>
+                  ))}
                 </tr>
-              ) : (
-                sortedData
-                  .slice(
-                    0,
-                    expanded ? sortedData.length : visibleCount + previewCount,
-                  )
-                  .map((row, rowIndex) => {
-                    const isPreviewRow = !expanded && rowIndex >= visibleCount;
-                    let opacity = 1;
+              </thead>
+              <tbody>
+                {sortedData.length === 0 ? (
+                  <tr>
+                    <td colSpan={headers.length} className="no-data">
+                      No data available
+                    </td>
+                  </tr>
+                ) : (
+                  sortedData
+                    .slice(
+                      0,
+                      expanded
+                        ? sortedData.length
+                        : visibleCount + previewCount
+                    )
+                    .map((row, rowIndex) => {
+                      const isPreviewRow =
+                        !expanded && rowIndex >= visibleCount;
+                      let opacity = 1;
+                      if (isPreviewRow) {
+                        const previewIndex = rowIndex - visibleCount;
+                        opacity = 0.7 - previewIndex * 0.2;
+                      }
 
-                    if (isPreviewRow) {
-                      const previewIndex = rowIndex - visibleCount;
-                      opacity = 0.7 - previewIndex * 0.2;
-                    }
+                      return (
+                        <tr
+                          key={rowIndex}
+                          style={{
+                            opacity,
+                            transition: "opacity 0.3s ease-in-out",
+                          }}
+                        >
+                          {headers.map((header, colIndex) => {
+                            const isFloodStageColumn =
+                              header ===
+                              "Peak Water Level at Mendenhall Lake (ft)";
+                            const cellStyle = isFloodStageColumn
+                              ? {
+                                  backgroundColor: getFloodStageColor(
+                                    parseFloat(row[header])
+                                  ),
+                                }
+                              : {};
+                            return (
+                              <td key={colIndex} style={cellStyle}>
+                                {row[header] || "—"}
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      );
+                    })
+                )}
+              </tbody>
+            </table>
+          </div>
 
-                    return (
-                      <tr
-                        key={rowIndex}
-                        style={{
-                          opacity,
-                          transition: "opacity 0.3s ease-in-out",
-                        }}
-                      >
-                        {headers.map((header, colIndex) => {
-                          const isFloodStageColumn =
-                            header ===
-                            "Peak Water Level at Mendenhall Lake (ft)";
-                          const cellStyle = isFloodStageColumn
-                            ? {
-                                backgroundColor: getFloodStageColor(
-                                  parseFloat(row[header]),
-                                ),
-                              }
-                            : {};
-
-                          return (
-                            <td key={colIndex} style={cellStyle}>
-                              {row[header] || "—"}
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    );
-                  })
-              )}
-            </tbody>
-          </table>
           {sortedData.length > visibleCount && (
             <button
               className="expand-button"

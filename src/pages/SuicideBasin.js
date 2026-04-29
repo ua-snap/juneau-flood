@@ -3,10 +3,9 @@ import SBmodel from "./SBmodel";
 import "./StoryMap.css";
 
 const SuicideBasin = () => {
-  // ------------------- COMPONENT UI -------------------
   return (
     <div className="suicide-basin-container">
-      {/* Title Section */}
+
       <div className="suicide-basin">
         <h2>How Suicide Basin Works</h2>
       </div>
@@ -14,7 +13,6 @@ const SuicideBasin = () => {
         Understand the Annual Glacial Lake Outburst Floods
       </p>
 
-      {/* Suicide Basin Info Card */}
       <div className="suicide-basin-info-card">
         <p>
           Suicide Basin is an over-deepened bedrock basin located approximately

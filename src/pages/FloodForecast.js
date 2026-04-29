@@ -4,9 +4,9 @@ import "./FloodForecast.css";
 import Tooltip from "./Tooltip";
 import FloodStageBar from "./FloodStageBar";
 
-// Main component
+
 const FloodPrediction = () => {
-  // State for live images and water level
+
   const [imageUrl, setImageUrl] = useState("");
   const [hydroGraphUrl, setHydroGraphUrl] = useState("");
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,6 @@ const FloodPrediction = () => {
   const [error, setError] = useState(null);
   const [activeInfo, setActiveInfo] = useState(null);
 
-  // Load fresh images on mount and every hour
   useEffect(() => {
     const updateImages = () => {
       setImageUrl(
