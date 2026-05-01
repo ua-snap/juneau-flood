@@ -1,12 +1,8 @@
-/* ===============================
-   Imports
-================================ */
+
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-/* ===============================
-   Layout: Suicide Basin Container
-================================ */
+
 .suicide-basin-container {
   max-width: 1700px;
   margin: 0 auto;
@@ -19,17 +15,15 @@
 }
 
 .text-center.mt-10 {
-  margin-top: 40px; /* or even 60px for extra breathing room */
+  margin-top: 40px; 
 }
 
-/* ===============================
-   Headings & Subheadings
-================================ */
+
 
 .suicide-basin h2 {
   text-align: center !important;
   margin: -2px 0 -10px;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   color: #154f89;
 }
 
@@ -46,24 +40,22 @@
 .suicide-basin-subheading,
 .live-view-subtitle {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #0e2b4a;
   margin: 0 0 15px;
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
 }
 
-/* ===============================
-   Suicide Basin Info Card
-================================ */
+
 .suicide-basin-info-card {
   max-width: 1310px;
   margin: 20px auto 10px;
-  padding: 15px 20px;
+  padding: 5px 15px;
   background-color: #f9fbfc;
   border: 1px solid #dce7ef;
   border-radius: 16px;
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0 auto;
   max-width: 1320px;
   text-align: center;
@@ -83,13 +75,10 @@
 }
 
 .suicide-basin-info-card p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #000000;
 }
 
-/* ===============================
-   GLOF Section
-================================ */
 .glof-content {
   display: flex;
   justify-content: center;
@@ -150,9 +139,6 @@
   line-height: 1.5;
 }
 
-/* ===============================
-   Slider Arrows
-================================ */
 .slider-arrow {
   position: absolute;
   top: 50%;
@@ -180,9 +166,6 @@
   right: 10px;
 }
 
-/* ===============================
-   Live View Section
-================================ */
 .live-view-container {
   display: flex;
   justify-content: center;
@@ -194,7 +177,6 @@
 
 .suicide-basin-subheading span {
   font-weight: normal;
-  /* Optional: match rest of text style */
   color: inherit;
   font-size: inherit;
 }
@@ -225,7 +207,7 @@
 .threejs-embed {
   position: relative;
   width: 100%;
-  /* 16:9 aspect ratio; tweak as you like */
+
   padding-top: 56.25%;
   border-radius: 16px;
   overflow: hidden;
@@ -233,7 +215,7 @@
   margin: 16px 0 32px;
 }
 
-/* Make the viewer fill the frame */
+
 .threejs-embed iframe {
   position: absolute;
   inset: 0;
@@ -242,7 +224,7 @@
   border: 0;
 }
 
-/* Optional: align with your existing headings/subheadings */
+
 .threejs-embed + .basin-image-caption {
   text-align: center;
   font-size: 0.95rem;
@@ -250,9 +232,7 @@
   margin-top: 8px;
 }
 
-/* ===============================
-   Responsive Styles
-================================ */
+
 @media (max-width: 1394px) {
   .glof-content {
     flex-direction: column;
@@ -401,7 +381,7 @@
 .page-wrapper {
   max-width: 1700px;
   margin: 0 auto;
-  padding: 0 20px; /* Optional: prevent content from touching edges on smaller screens */
+  padding: 0 20px; 
   box-sizing: border-box;
 }
 

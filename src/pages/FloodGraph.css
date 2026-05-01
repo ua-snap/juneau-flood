@@ -1,45 +1,37 @@
-/* Flood Graph Layout */
 .flood-graph-container {
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-start;
-  width: 100%;
-  position: relative;
-  padding: 10px;
-  height: auto;
+  width: 99.99%;
+  max-width: 1800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  overflow-x: auto;
+  background: transparent;
+  contain: layout;
+  margin-top: -30px;
 }
 
-/* Scatter Chart Wrapper */
 .scatter-chart-wrapper {
   width: 100%;
-  transition:
-    width 0.3s ease-in-out,
-    margin 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out, margin 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
 }
 
-/* Shift Graph Left When Event Card is Visible */
 .scatter-chart-wrapper.shift-left {
-  width: 80%; /* Slightly less than 90% for better spacing */
+  width: 80%;
   margin-right: auto;
 }
 
 .flood-graph-title {
   text-align: left;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  padding-left: 40px;
-  margin-left: 30px;
   margin-bottom: 1px;
-  color: #0e2b4a;
+  color: rgb(0, 0, 0);
 }
 
 .flood-graph-subtitle {
   text-align: left;
   font-size: 16px;
-  padding-left: 40px;
-  margin-left: 30px;
   color: #154f89;
   margin-top: 1px;
   margin-bottom: 1px;
@@ -47,155 +39,158 @@
 
 .event-info-card {
   width: 20%;
-  background: rgb(249, 249, 249); /* Match .floodcard background */
-  border-right: 5px solid #00509e;
+  background: #f4f4f4;
+  border-right: 5px solid #2563eb;
   padding: 15px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-family: "Open Sans", sans-serif;
-  z-index: 100;
-  transition:
-    opacity 0.3s ease-in-out,
-    transform 0.3s ease-in-out,
-    background-color 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out;
+  border-radius: 10px;
+  font-size: 14px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 100px;
-  line-height: 1;
-  height: 100%;
-  min-height: 290px;
-  max-height: 305px;
-  min-width: 200px; /* Ensures readability on small screens */
+  justify-content: flex-start;
+  margin-left: 15px;
+  min-width: 200px;
   max-width: 300px;
-  width: auto; /* Adapts to content */
-  word-wrap: break-word;
+  max-height: 320px;
   overflow: hidden;
-  margin-left: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
 .event-title {
-  width: 100%;
   text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  color: #000000;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
-/* Hidden Info Card */
-.event-info-card.hidden {
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-}
-
-/* Hover Effect on Event Card */
-@media (hover: hover) {
-  .event-info-card:hover {
-    background-color: #fea8a81a;
-  }
-}
-
-/* Dynamic Hover Effect */
 .event-info-card:hover {
   background-color: var(--hover-color, #fea8a81a);
 }
 
-/* Scatter Point Hover Effect */
-.recharts-scatter-symbol:hover {
-  r: 8 !important;
-  transition: r 0.2s ease-in-out;
-}
-
-/* Responsive Design for Tablets and Smaller Screens */
-@media (max-width: 900px) {
-  .flood-graph-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 5px;
-  }
-
-  .scatter-chart-wrapper {
-    width: 100%;
-  }
-
-  .event-info-card {
-    position: relative;
-    width: 90%;
-    margin-top: 15px;
-    padding: 10px;
-    box-shadow: none;
-    border: none;
-    height: auto;
-    text-align: center;
-  }
-
-  .event-title {
-    font-size: 1.3rem;
-  }
-}
-
-/* Mobile-Specific Styles */
-@media (max-width: 600px) {
-  .flood-graph-title {
-    font-size: 20px;
-    padding-left: 20px;
-    text-align: center;
-  }
-
-  .scatter-chart-wrapper {
-    width: 100%;
-  }
-
-  .event-info-card {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    line-height: 1.3;
-  }
-
-  .event-title {
-    font-size: 1.2rem;
-  }
-}
-
-/* Mobile-Specific Styles */
-@media (max-width: 480px) {
-  .flood-legend {
-    display: none !important; /* Hide legend on mobile */
-  }
-}
-
 .flood-legend {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #111827;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  font-size: 14px;
 }
 
-.legend-color {
-  width: 15px;
-  height: 15px;
+.legend-color, .legend-outline {
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   display: inline-block;
   margin-right: 5px;
 }
 
 .legend-outline {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 5px;
-  border: 2px solid; /* Creates the outline */
-  background-color: transparent; /* Makes sure the circle is not filled */
+  border: 2px solid;
+  background-color: transparent;
+}
+
+@media (max-width: 900px) {
+  .flood-graph-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scatter-chart-wrapper.shift-left {
+    width: 100%;
+    margin: 0;
+  }
+
+  .event-info-card {
+    width: 90%;
+    margin-top: 10px;
+    border-right: none;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .event-info-card { width: 100%; font-size: 13px; }
+}
+
+@media (max-width: 600px) {
+  .flood-graph-container {
+    padding: 0; 
+    width: 97%;
+    overflow-x: auto; 
+  }
+
+  .flood-graph{
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .flood-graph th,
+  .flood-graph td {
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  .flood-graph-title {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: -5px;
+  color: rgb(0, 0, 0);
+}
+}
+
+.glof-mapbox-popup.mapboxgl-popup {
+  max-width: 250px;
+  z-index: 90 !important;
+  height: auto !important;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  pointer-events: none;
+  position: absolute; 
+  transform: translate(-80%, -260%); 
+}
+
+.glof-mapbox-popup .mapboxgl-popup-content {
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  color: white;
+  padding: 12px;
+  z-index: 4;
+  height: auto !important;
+}
+
+.glof-mapbox-popup .mapboxgl-popup-content h4 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.glof-mapbox-popup .mapboxgl-popup-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.1;
+  white-space: normal;
+}
+
+.glof-mapbox-popup .mapboxgl-popup-tip {
+  border-top-color: rgba(0, 0, 0, 0.6) !important;
+  margin-top: -1px !important;
+}
+
+.glof-mapbox-popup .mapboxgl-popup-close-button {
+  display: none; 
+}
+
+.glof-mapbox-popup--hover {
+  pointer-events: none;
+}
+
+.glof-mapbox-popup--locked {
+  pointer-events: auto;
 }

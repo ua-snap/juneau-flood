@@ -1,4 +1,4 @@
-/* === FEEDBACK PAGE LAYOUT === */
+
 .feedback-page {
   display: flex;
   flex-direction: column;
@@ -10,35 +10,33 @@
   color: #222;
 }
 
-/* === HEADER TITLES === */
 .flood-feedback-container {
   text-align: center;
 }
 
 .flood-feedback-title {
   text-align: center !important;
-  margin: 10px 0 -10px;
-  font-size: 2.4rem;
+  margin: 8px 0 -10px;
+  font-size: 2.2rem;
   color: #154f89;
 }
 
 .flood-feedback-subheading {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #0e2b4a;
   margin: 0 0 20px;
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
 }
 
-/* === ABOUT FLOODS CARD === */
 .about-feedback-card {
   background-color: #f9fbfc;
   border: 1px solid #dce7ef;
   border-radius: 16px;
-  padding: 24px 28px;
+  padding: 18px 12px !important;
   text-align: left;
-  line-height: 1.7;
+  line-height: 1;
   max-width: 1100px;
   margin: 0 auto;
   text-align: center;
@@ -75,7 +73,6 @@
   margin-top: 16px;
 }
 
-/* === FEEDBACK FORM === */
 .feedback-container {
   display: flex;
   flex-direction: column;
@@ -89,7 +86,6 @@
   border-radius: 10px;
 }
 
-/* === BACK LINK (if used) === */
 .back-link {
   margin-top: 20px;
 }
@@ -104,7 +100,6 @@
   text-decoration: underline;
 }
 
-/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .flood-feedback-title {
     font-size: 1.6rem;
