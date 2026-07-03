@@ -277,7 +277,7 @@ const Home = () => {
         <div className="home-about-card">
           <h3>About</h3>
           <p>
-            This dashboard was created and is maintained by the University of
+            This glacial lake outburst flood (GLOF) dashboard was created and is maintained by the University of
             Alaska Southeast in partnership with the Alaska Climate Adaptation
             Science Center. The page provides an interactive view of the{" "}
             <a
@@ -288,23 +288,32 @@ const Home = () => {
               flood inundation maps
             </a>{" "}
             contracted by the City and Borough of Juneau for the Mendenhall
-            Valley. It also contains information about glacial lake outburst
-            floods (GLOFs) from Suicide Basin. Use the cards above to explore
-            flood maps, flood forecasting, past outburst flood events, and
+            Valley. Use the cards above to explore
+            flood maps, flood forecasting, and
             understand how outburst floods originate from Suicide Basin and
-            impact the Juneau area. This website is for planning purposes only.
-            For the National Weather Service monitoring page click below.
-          </p>
+            impact the Juneau area. This website is for planning purposes only and
+            is not being updated with real-time flood status updates. <strong> For updates on flood conditions, 
+            preparedness information, and evacuation maps, click the CBJ button below. </strong>{" "} For the
+             NWS Suicide Basin monitoring page, click the NWS button below. </p>
           <div className="button-wrapper">
-            <a
-              href="https://www.weather.gov/ajk/suicideBasin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-button"
-            >
-              NWS Monitoring Page
-            </a>
-          </div>
+  <a
+    href="https://juneau.org/emergency/emergency-flood-response"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="home-button"
+  >
+    CBJ Flood Information
+  </a>
+
+  <a
+    href="https://www.weather.gov/ajk/suicideBasin"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="home-button"
+  >
+    NWS Monitoring Page
+  </a>
+</div>
         </div>
 
         <div className="home-flood-card">
