@@ -31,13 +31,13 @@ const FloodWarn = () => {
         }
       } catch (error) {
         console.error("Error fetching status:", error);
-        setFloodStatus("Data unavailable. Check NWS website.");
+        setFloodStatus("Check NWS website.");
         setAlertUrl("https://www.weather.gov/ajk/suicideBasin");
       }
     };
 
     fetchFloodStatus();
-    const interval = setInterval(fetchFloodStatus, 600000); // Update every 10 minutes
+    const interval = setInterval(fetchFloodStatus, 600000);
     return () => clearInterval(interval);
   }, []);
 
@@ -49,7 +49,7 @@ const FloodWarn = () => {
         rel="noopener noreferrer"
         className="flood-status-btn"
       >
-        <span className="flood-status"> NWS: {floodStatus}</span>
+        <span className="flood-status"> NWS: Advisory Issued</span>
       </a>
     </div>
   );
