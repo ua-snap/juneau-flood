@@ -367,6 +367,35 @@ body {
   background-color: #9d0303;
 }
 
+.home-button2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 180px;
+  min-height: 24px;
+
+  background-color: #9d0303;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    background-color 0.3s ease-in-out,
+    transform 0.2s;
+
+  margin: 0; 
+}
+
+.home-button2:hover {
+  background-color: #00509e;
+}
+
 .faq-button {
   display: inline-block;
   background-color: #00509e;
@@ -522,6 +551,20 @@ body {
   font-weight: bold;
 }
 
+  .home-button2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 150px;
+  min-height: 24px;
+
+  background-color: #00509e;
+  color: white;
+  font-size: 13px !important;
+  font-weight: bold;
+}
+
   .resources-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -584,4 +627,3 @@ body {
     padding: 0.4rem 0.7rem;
   }
 }
-
