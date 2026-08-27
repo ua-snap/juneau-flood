@@ -3,7 +3,6 @@ import mapboxgl from "mapbox-gl";
 import "./FloodLevels.css";
 import FloodStageMenu from "./FloodStageMenu";
 import FloodStepper from "./FloodStepper";
-import FloodInfoPopup from "./FloodInfoPopup";
 import Search from "./Search.js";
 import FloodRecordsBar from "./FloodKey.js";
 import FloodCardMobile from "./FloodCardMobile";
@@ -49,7 +48,6 @@ const FloodLevels = () => {
   const hoverHandlersRef = useRef({ move: null, out: null });
   const [mapReady, setMapReady] = useState(false);
   const lakeGagesRef = useRef();
- 
 
   const setupHoverPopup = useCallback((activeLayerId) => {
     const map = mapRef.current;
@@ -264,7 +262,7 @@ const FloodLevels = () => {
   };
 
   useEffect(() => {
-    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN; 
+    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
     if (!mapRef.current) {
       mapRef.current = new mapboxgl.Map({
@@ -320,7 +318,6 @@ const FloodLevels = () => {
           },
           filter: ["==", "tax_id", ""],
         });
-
 
         setMapReady(true);
       });
@@ -398,7 +395,6 @@ const FloodLevels = () => {
     return () => clearInterval(interval);
   }, []);
 
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -408,7 +404,6 @@ const FloodLevels = () => {
 
   return (
     <div className="main-content floodlevels-page">
-      <FloodInfoPopup />
       <div
         id="map"
         ref={mapContainerRef}
@@ -416,12 +411,10 @@ const FloodLevels = () => {
       />
 
       <LakeGages
-  ref={lakeGagesRef}
-  mapRef={mapRef}
-  setWaterLevels={setWaterLevels}
-/>
-
-
+        ref={lakeGagesRef}
+        mapRef={mapRef}
+        setWaterLevels={setWaterLevels}
+      />
 
       <div className="flood-stepper-container">
         <FloodStepper
@@ -485,16 +478,20 @@ const FloodLevels = () => {
               setupHoverPopup(`flood${64 + (selectedFloodLevel - 8)}-fill`)
             }
           />
-<div style={{ marginTop: "20px" }}>
-  {waterLevels.map((level) => (
-    <WaterLevelCard
-  key={level.id}
-  level={level}
-  onHover={() => lakeGagesRef.current?.showPopupForGage("15052500")}
-  onLeave={() => lakeGagesRef.current?.hidePopupForGage("15052500")}
-/>
-  ))}
-</div>
+          <div style={{ marginTop: "20px" }}>
+            {waterLevels.map((level) => (
+              <WaterLevelCard
+                key={level.id}
+                level={level}
+                onHover={() =>
+                  lakeGagesRef.current?.showPopupForGage("15052500")
+                }
+                onLeave={() =>
+                  lakeGagesRef.current?.hidePopupForGage("15052500")
+                }
+              />
+            ))}
+          </div>
 
           <AboutMap />
         </div>
@@ -532,4 +529,3 @@ const FloodLevels = () => {
 };
 
 export default FloodLevels;
-
