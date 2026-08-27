@@ -49,7 +49,7 @@ const FloodWarn = () => {
         rel="noopener noreferrer"
         className="flood-status-btn"
       >
-        <span className="flood-status"> NWS: Advisory Issued</span>
+        <span className="flood-status"> NWS: No Advisory</span>
       </a>
     </div>
   );
